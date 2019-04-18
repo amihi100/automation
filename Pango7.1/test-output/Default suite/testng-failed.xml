@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="TestNG.DevSanityAllOptions">
+        <methods>
+          <include name="initialOfferQuestions"/>
+        </methods>
+      </class> <!-- TestNG.DevSanityAllOptions -->
+      <class name="TestNG.varClass">
+        <methods>
+          <include name="defineVariables"/>
+        </methods>
+      </class> <!-- TestNG.varClass -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
