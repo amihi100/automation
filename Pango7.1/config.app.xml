@@ -14,8 +14,8 @@
 	<entry key="waitBeforeClick">1</entry>
 	<entry key="MILLISECONDS">1000</entry>
 	<!-- Insured details: -->
-	<entry key="insuredName">אין מספר הצעה</entry>
-	<entry key="insuredLastName">עמיחי</entry>
+	<entry key="insuredName">בדיקה עמיחי</entry>
+	<entry key="insuredLastName">לא למחוק</entry>
 	<entry key="insuredIdDriver">00018</entry>
 	<entry key="insuredBirthDate">1988</entry>
 	<entry key="insuredLicenseIssueYear">2006</entry>
@@ -40,12 +40,5 @@
 	<entry key="cardMonth">9</entry>
 	<entry key="cardYear">2020</entry>
 	<!-- EXTRA DETALIS -->
-	
-	
-	
-	
-	
-	
-	
 	
 </properties>

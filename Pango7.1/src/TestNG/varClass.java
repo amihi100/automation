@@ -59,9 +59,12 @@ public class varClass {
 			// environmentURL =
 			// "https://stage.pango-ins.co.il/api/test/url?uid=7ee1878d-556c-4aef-ab25-2e29cbae93d8&ln="
 			// + carNumber;
-
-			environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?uid="+  "a17240b3-90a5-4817-b269-d097e9a26668"  +"&ln=" + carNumber;
+			//environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?uid="+  "a17240b3-90a5-4817-b269-d097e9a26668"  +"&ln=" + carNumber;
 			
+			//Test in 7.5.2019  - 10.5.2019 if RegisterdAccount is still available for the user
+			//carNumber = "5900179";
+			//environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?uid="+  "d3e1594d-a5f8-4a01-8dbd-8ccf5d1808e0"  +"&ln=" + carNumber;
+
 			environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?ln=" + carNumber + "&ui=" + UUID.randomUUID();
 			System.out.println(environmentURL);
 			thankYouURL = "https://"  + varProps.getProperty("environment") + " .pango-ins.co.il/thanks";
@@ -121,17 +124,12 @@ public class varClass {
 			options.addArguments("disable-infobars");
 			options.addArguments("--incognito");
 			driver = new ChromeDriver(options);
-	
-	
+
 			
 			driver.get(environmentURL);
 			driver.manage().window().setSize(windowDimension);
 			
-			
-			
-			
-			
-			
+
 			TimeUnit.SECONDS.sleep(waitBeforeClick);
 
 			// Extract URL for text.
@@ -154,69 +152,4 @@ public class varClass {
 			throw new Exception("Failed by wrong configuration!");
 		}
 	}
-
-	/**
-	 * public void defineVariables(String env) throws Exception { try { String dir =
-	 * System.getProperty("user.dir"); //System.out.println("current dir = " + dir);
-	 * //String rootPath =
-	 * Thread.currentThread().getContextClassLoader().getResource("").getPath();
-	 * //System.out.println("Root path:"+ rootPath);
-	 * 
-	 * String filePath= MessageFormat.format("{0}\\config.{1}.xml", dir, env);
-	 * 
-	 * Properties varProps = new Properties(); varProps.loadFromXML(new
-	 * FileInputStream(filePath));
-	 * 
-	 * // Define resolution - iPhone X (375 x 812). dimension = new Dimension(375,
-	 * 912);
-	 * 
-	 * // Define Max wait for element and wait before click to next screen
-	 * (seconds). waitForElement = 20; waitBeforeClick = 1; MILLISECONDS = 1000; //
-	 * Define scenario variables carNumber =
-	 * varProps.getProperty("carNumber");//"5901079"; // Menora car#:
-	 * 59XXX79.//5901079 //2432773 insuredName = "אין מספר הצעה"; insuredLastName =
-	 * "עמיחי"; insuredIdDriver = "00018"; insuredBirthDate = "1988";
-	 * insuredLicenseIssueYear = "2006"; city = "אלקנה"; street = "שיר השירים";
-	 * houseNumber = "200"; email = "amihi100@gmail.com"; cellphone = "0507202828";
-	 * contactCellphone0 = "0507202829"; contactCellphone1 = "0507202830"; //
-	 * Driver1 details: driver1Name = "ישראל ישראלי"; driver1LastName = "אזרח מספר
-	 * 1"; driver1Id = "330653783"; driver1BirthDate = "1996";
-	 * driver1LicenseIssueYear = "2014"; // CreditGaurd details cardFullName =
-	 * "עמיחי תורגמן"; cardPersonalId = "890108558"; cardNumber =
-	 * "5326120384572410"; cardMonth = "9"; cardYear = "2020"; // environmentURL =
-	 * //
-	 * "https://stage.pango-ins.co.il/api/test/url?uid=7ee1878d-556c-4aef-ab25-2e29cbae93d8&ln="
-	 * // + carNumber; // Environment: //environmentURL =
-	 * "https://dev.pango-ins.co.il/api/test/url?ln=" + carNumber; environmentURL =
-	 * "https://app.pango-ins.co.il/api/test/url?ln=" + carNumber; //environmentURL
-	 * = "https://stage.pango-ins.co.il/api/test/url?ln=" + carNumber;
-	 * //environmentURL = "https://proms.assuta.co.il/Portal/Login.aspx";
-	 * 
-	 * System.out.println(environmentURL); // Define path of chromedriver.exe file.
-	 * System.setProperty("webdriver.chrome.driver",
-	 * "C:\\Users\\amichaito\\Desktop\\Code\\Selenium\\PangoAPP\\chromedriver.exe");
-	 * // Define path to save screenShot of first screen (start date).
-	 * screenShotPath = "c:\\tmp1\\";
-	 * 
-	 * options = new ChromeOptions(); options.addArguments("disable-infobars");
-	 * options.addArguments("--incognito"); DesiredCapabilities capabilities =
-	 * DesiredCapabilities.chrome();
-	 * capabilities.setCapability(ChromeOptions.CAPABILITY, options); driver = new
-	 * ChromeDriver(options); driver.get(environmentURL);
-	 * driver.manage().window().setSize(dimension);
-	 * TimeUnit.SECONDS.sleep(waitBeforeClick);
-	 * 
-	 * // Extract URL for text. String data =
-	 * driver.findElementByTagName("body").getText(); String[] arr =
-	 * data.split("https://"); String pango = ""; for (String ss : arr) { pango =
-	 * ss; } panguGUID = pango.replaceAll("}", "").replaceAll("\"", ""); // Open URL
-	 * with GUID driver.get("https://" + panguGUID); // DATE file format Calendar
-	 * cal = Calendar.getInstance(); cal.setTime(Date.from(Instant.now())); //
-	 * Create a filename from a format string. filename =
-	 * String.format("%1$tY-%1$tm-%1$td-%1$tk-%1$tS-%1$tp", cal); } catch (Exception
-	 * e) { throw new Exception("Failed by wrong configuration!"); } }
-	 * 
-	 * 
-	 */
-
 }

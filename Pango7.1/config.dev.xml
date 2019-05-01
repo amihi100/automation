@@ -5,16 +5,13 @@
 	<entry key="appID">false</entry>
 	<entry key="numberOfDrivers">oneDriver</entry>
 		<entry key="environment">dev</entry>
-	<!-- 
-	<entry key="carNumber">2432773</entry>
-	 -->
+	<!-- <entry key="carNumber">2432773</entry> -->
 	<entry key="carNumber">5900679</entry>
-
 	<entry key="waitForElement">20</entry>
 	<entry key="waitBeforeClick">1</entry>
 	<entry key="MILLISECONDS">1000</entry>
 	<!-- Insured details: -->
-	<entry key="insuredName">אין מספר הצעה</entry>
+	<entry key="insuredName">סביבת דב</entry>
 	<entry key="insuredLastName">עמיחי</entry>
 	<entry key="insuredIdDriver">00018</entry>
 	<entry key="insuredBirthDate">1988</entry>

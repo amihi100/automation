@@ -3,7 +3,7 @@
 
 <suite thread-count="1" verbose="1" name="Pango App Suite"
 	annotations="JDK" parallel="tests">
-  <parameter name = "env" value="app"/> 
+  <parameter name = "env" value="stage"/> 
 	<test name="Automated test - End2End">
 		<classes>
 			<!-- <class name="TestNG.varClass" /> -->
