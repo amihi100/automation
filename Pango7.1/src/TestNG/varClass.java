@@ -27,7 +27,7 @@ public class varClass {
 	public String environmentURL, environment,  panguGUID, carNumber, numberOfDrivers, screenShotPath, filename, insuredName,
 			insuredLastName, insuredIdDriver, insuredBirthDate, insuredLicenseIssueYear, city, street, houseNumber,
 			email, cellphone, wizardPhone0, wizardPhone1, driver1Name, cardNumber, driver1LastName, driver1Id,
-			driver1BirthDate, cardPersonalId, driver1LicenseIssueYear, cardFullName, cardMonth, cardYear;
+			driver1BirthDate, cardPersonalId, driver1LicenseIssueYear, cardFullName, cardMonth, cardYear, localApp, httpOrHttps;
 
 	public boolean appID;
 	public String thankYouURL; 
@@ -44,13 +44,13 @@ public class varClass {
 	// @Test(priority = 0, groups={"varClass.defineVariables"})
 	public void defineVariables(String env) throws Exception {
 		try {
-			windowDimension = new Dimension(375, 912);
+			windowDimension = new Dimension(372, 900);
 
 			String dir = System.getProperty("user.dir");
 			// System.out.println("current dir = " + dir);
 			String rootPath =
-			 Thread.currentThread().getContextClassLoader().getResource("").getPath();
-			 System.out.println("Root path:"+ rootPath);
+			Thread.currentThread().getContextClassLoader().getResource("").getPath();
+			System.out.println("Root path:"+ rootPath);
 			String filePath = MessageFormat.format("{0}\\config.{1}.xml", dir, env);
 			Properties varProps = new Properties();
 			varProps.loadFromXML(new FileInputStream(filePath));
@@ -65,8 +65,20 @@ public class varClass {
 			//carNumber = "5900179";
 			//environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?uid="+  "d3e1594d-a5f8-4a01-8dbd-8ccf5d1808e0"  +"&ln=" + carNumber;
 
-			environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?ln=" + carNumber + "&ui=" + UUID.randomUUID();
-			System.out.println(environmentURL);
+			
+			
+			//environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?ln=" + carNumber + "&ui=" + UUID.randomUUID();
+			environment = varProps.getProperty("environment");
+			
+			System.out.println("First URL: "+ environment);
+			if(environment.equals("local")){
+				environmentURL =  "http://localhost:26904/api/test/url";
+				System.out.println("hi: " +environmentURL);
+			}else {
+				environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?ln=" + carNumber + "&ui=" + UUID.randomUUID();
+			}
+
+			System.out.println("Environment is: "+ environmentURL);
 			thankYouURL = "https://"  + varProps.getProperty("environment") + " .pango-ins.co.il/thanks";
 			// Define resolution - iPhone X (375 x 812).
 			//dimension = new Dimension(375, 812);
@@ -133,16 +145,30 @@ public class varClass {
 			TimeUnit.SECONDS.sleep(waitBeforeClick);
 
 			// Extract URL for text.
+			
+			
 			String data = driver.findElementByTagName("body").getText();
-			String[] arr = data.split("https://");
+			
+			
+			if(environment.equals("local")) {
+				httpOrHttps = "http://";
+			}else {
+				httpOrHttps = "https://";
+			}
+			
+			
+			String[] arr = data.split(httpOrHttps);
 			String pango = "";
 			for (String ss : arr) {
 				pango = ss;
 			}
-						
+					
+			
+			
 			panguGUID = pango.replaceAll("}", "").replaceAll("\"", "");
 			// Open URL with GUID
-			driver.get("https://" + panguGUID);
+			driver.get(httpOrHttps + panguGUID);
+			
 			// DATE file format
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(Date.from(Instant.now()));

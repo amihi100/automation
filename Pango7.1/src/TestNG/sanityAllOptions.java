@@ -45,6 +45,7 @@ public class sanityAllOptions {
 	@Parameters("env")
 	public sanityAllOptions(String env)
 			throws InvalidPropertiesFormatException, FileNotFoundException, IOException, InterruptedException {
+		//TimeUnit.SECONDS.sleep(10);
 
 		VarClass = new varClass();
 		try {
@@ -189,41 +190,70 @@ public class sanityAllOptions {
 	@Test(priority = 10)
 	public void initialOfferQuestions() throws Exception {
 		try {
-
 			// VarClass.driver.navigate().refresh();
 			// Screen1.1: Start insurance date.
 			VarClass.wait = new WebDriverWait(VarClass.driver, VarClass.waitForElement);
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-2")));
+			//VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-2")));
 			// Anypicker needs 2 seconds lock user choice.
-			TimeUnit.SECONDS.sleep(2);
+			
 //			 ScreenShot
 			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
 //			 Now copy .jpeg to screenShotPath
 			FileUtils.copyFile(scrFile, new File(VarClass.screenShotPath + VarClass.filename + ".jpeg"));
+			
+//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+//			VarClass.driver.findElementByXPath("/html/body/app-root/accessibility-menu/div/button[2]").click();
+//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+//			
+			
 			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
 			js.executeScript("window.pickerInstance.showOrHidePicker()");
 			js.executeScript("window.pickerInstance.setSelectedDate(new Date(" + startDateYear + "," + startDateMonth
 					+ "," + startDateDay + ", 0, 0, 0, 0))");
 			TimeUnit.SECONDS.sleep(1);
 			js.executeScript("window.pickerInstance.showOrHidePicker()");
+
 			TimeUnit.SECONDS.sleep(1);
 			VarClass.driver.findElementByXPath("//*[@id=\"ap-component-selector-1\"]").click();
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
+
 			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()}, 000)");
 			// Screen1.2: How many drivers.
-
+;
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q-radio-1")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 
 			VarClass.driver.findElementByXPath(numberOfDrivers).click();
 			// Screen1.3: Youngest driver.
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+;
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-0")));
-			TimeUnit.SECONDS.sleep(1);
+
+			
+			VarClass.driver.findElementByXPath("//*[@id=\"ap-component-selector-0\"]").click();
+
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+
+			//VarClass.driver.findElementByXPath("//*[@id=\"ap-component-0\"]/div/div[2]").click();
+			
+
 			js.executeScript("window.ageRangeApo.__changeComponentValue('0'," + youngestDriverAge + ")");
 			js.executeScript("window.ageRangeApo.setSelectedAndInvalidValuesForRows(true)");
+
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath("/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button")
-					.click();
+			
+//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]
+//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[1]/button[2]
+//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]
+//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]
+			
+					//VarClass.driver.findElementByXPath("/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]")
+				//	.click();
+		//	VarClass.driver.findElementByClassName("orange-circle").click();
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			VarClass.driver.findElementByCssSelector("body > app-root > app-offer > aw-wizard > div > aw-wizard-step:nth-child(3) > button.orange-circle").click();
+			
+			
 			// Screen1.4: licenseOfYoungestDriver.
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q4-radio-1")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
@@ -262,13 +292,16 @@ public class sanityAllOptions {
 					By.cssSelector("body > app-root > primary-bid > div > div.bid-content > a.link-procceed")));
 			// Initial offer needs 6 seconds to load (after element is visible).
 			TimeUnit.SECONDS.sleep(6);
+			
+			
+			
 			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/ul/li[1]/a").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
-					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/div[1]").click();
+					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
-					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/div[1]").click();
+					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
 					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/div[1]").click();
@@ -853,7 +886,9 @@ public class sanityAllOptions {
 		TimeUnit.SECONDS.sleep(3);
 		try {
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.get(VarClass.environmentURL);
+			if(VarClass.appID) {
+				VarClass.driver.get(VarClass.environmentURL);
+			}
 			if (this.VarClass.driver.findElementByXPath("/html/body/app-root/registered-account/div/div[1]/div/img")
 					.isDisplayed()
 					|| this.VarClass.driver
