@@ -200,60 +200,30 @@ public class sanityAllOptions {
 			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
 //			 Now copy .jpeg to screenShotPath
 			FileUtils.copyFile(scrFile, new File(VarClass.screenShotPath + VarClass.filename + ".jpeg"));
-			
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver.findElementByXPath("/html/body/app-root/accessibility-menu/div/button[2]").click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			
-			
 			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
 			js.executeScript("window.pickerInstance.showOrHidePicker()");
 			js.executeScript("window.pickerInstance.setSelectedDate(new Date(" + startDateYear + "," + startDateMonth
 					+ "," + startDateDay + ", 0, 0, 0, 0))");
 			TimeUnit.SECONDS.sleep(1);
 			js.executeScript("window.pickerInstance.showOrHidePicker()");
-
 			TimeUnit.SECONDS.sleep(1);
 			VarClass.driver.findElementByXPath("//*[@id=\"ap-component-selector-1\"]").click();
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-
 			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()}, 000)");
 			// Screen1.2: How many drivers.
-;
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q-radio-1")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-
 			VarClass.driver.findElementByXPath(numberOfDrivers).click();
 			// Screen1.3: Youngest driver.
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-;
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-0")));
-
-			
 			VarClass.driver.findElementByXPath("//*[@id=\"ap-component-selector-0\"]").click();
-
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-
-			//VarClass.driver.findElementByXPath("//*[@id=\"ap-component-0\"]/div/div[2]").click();
-			
-
 			js.executeScript("window.ageRangeApo.__changeComponentValue('0'," + youngestDriverAge + ")");
 			js.executeScript("window.ageRangeApo.setSelectedAndInvalidValuesForRows(true)");
-
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			
-//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]
-//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[1]/button[2]
-//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]
-//			/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]
-			
-					//VarClass.driver.findElementByXPath("/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[3]/button[2]")
-				//	.click();
-		//	VarClass.driver.findElementByClassName("orange-circle").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByCssSelector("body > app-root > app-offer > aw-wizard > div > aw-wizard-step:nth-child(3) > button.orange-circle").click();
-			
-			
 			// Screen1.4: licenseOfYoungestDriver.
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q4-radio-1")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
@@ -292,9 +262,7 @@ public class sanityAllOptions {
 					By.cssSelector("body > app-root > primary-bid > div > div.bid-content > a.link-procceed")));
 			// Initial offer needs 6 seconds to load (after element is visible).
 			TimeUnit.SECONDS.sleep(6);
-			
-			
-			
+			// Check covers:
 			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/ul/li[1]/a").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
@@ -304,28 +272,38 @@ public class sanityAllOptions {
 					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
-					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/div[1]").click();
+					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
-					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/div[1]").click();
+					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a").click();
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			VarClass.driver.findElementByXPath(
+					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a").click();
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			VarClass.driver.findElementByXPath(
+					"//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a").click();
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[1]/button/img")
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/ul/li[2]/a").click();
+			//Protection / Secure level: 		
+			VarClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/ul/li[2]/a").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//*[@id=\"modal-shield\"]/div[1]/div/div[1]/button/img").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/div[9]/a[1]").click();
+			//Terms of condition:
+			VarClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/div[9]/a[1]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			VarClass.driver.findElementByXPath("//*[@id=\"modal-terms-of-service\"]/div[1]/div/div[1]/button/img")
-					.click();
+			VarClass.driver.findElementByXPath("//*[@id=\"modal-terms-of-service\"]/div[1]/div/div[1]/button/img").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/div[9]/a[2]").click();
+			// Privacy policy:
+			VarClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/div[9]/a[2]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			VarClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
-					.click();
-			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			VarClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img").click();
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);	
+		
 		} catch (Exception e) {
 			throw new Exception("Failed in INITIAL OFFER SCREEN QUESTION");
 		}
@@ -636,30 +614,44 @@ public class sanityAllOptions {
 					.visibilityOfElementLocated(By.xpath("/html/body/app-root/final-bid/div/div[1]/a[2]")));
 			// Need to wait 3 seconds for element.
 			TimeUnit.SECONDS.sleep(3);
+			
+			//Requred covers:
 			VarClass.driver.findElementByXPath("/html/body/app-root/final-bid/div/div[1]/div[6]/a[1]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver
 					.findElementByXPath(
-							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[1]/panel/div/div[1]")
+							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a")
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver
 					.findElementByXPath(
-							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[1]/panel/div/div[1]")
+							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a")
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver
 					.findElementByXPath(
-							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[3]/panel/div/div[1]")
+							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a")
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver
 					.findElementByXPath(
-							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[3]/panel/div/div[1]")
+							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a")
+					.click();			
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			VarClass.driver
+					.findElementByXPath(
+							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a")
 					.click();
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			VarClass.driver
+					.findElementByXPath(
+							"//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a")
+					.click();
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers-2\"]/div[1]/div/div[1]/button/img")
 					.click();
-			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);			
+			// Takanon sale:
 			VarClass.driver.findElementByXPath("/html/body/app-root/final-bid/div/div[1]/div[6]/a[2]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//*[@id=\"modal-insurance-takanon\"]/div[1]/div/div[1]/button/img")
@@ -785,10 +777,14 @@ public class sanityAllOptions {
 			TimeUnit.SECONDS.sleep(10);
 			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[2]/div/div[2]/ul/li[2]/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]")));
+			
+			
+			
 			// Go back to Final offer:
 			VarClass.driver
 					.findElementByXPath(
 							"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[2]/div/div[2]/div/button")
+											
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
