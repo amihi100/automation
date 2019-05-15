@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Pango App Suite]" parallel="tests">
-  <parameter name="env" value="local"/>
+  <parameter name="env" value="dev"/>
   <test thread-count="1" name="Automated test - End2End(failed)" parallel="tests">
     <classes>
       <class name="TestNG.sanityAllOptions">
         <methods>
-          <include name="finalOfferQuestions"/>
-          <include name="callMeWizard1"/>
-          <include name="covers"/>
           <include name="thankYouPage"/>
-          <include name="initialOfferScreen"/>
-          <include name="callMeWizard2"/>
-          <include name="finalOfferScreen"/>
           <include name="payments"/>
           <include name="iframeCreditGuard"/>
           <include name="registeredAccount"/>
