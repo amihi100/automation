@@ -1,2 +1,5 @@
 [0217/153414.156:ERROR:file_io_win.cc(170)] CreateFile C:\Users\AMICHA~1\AppData\Local\Temp\scoped_dir21368_30002\Crashpad\reports\f18c7faa-7d70-468d-b24f-b7c6ba296951.dmp: The system cannot find the path specified. (0x3)
 [0217/153414.179:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0515/150158.080:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0515/150158.084:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0515/150158.084:ERROR:exception_snapshot_win.cc(98)] thread ID 27816 not found in process

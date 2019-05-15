@@ -70,7 +70,7 @@ public class varClass {
 			//environmentURL =  "https://" + varProps.getProperty("environment")+ ".pango-ins.co.il/api/test/url?ln=" + carNumber + "&ui=" + UUID.randomUUID();
 			environment = varProps.getProperty("environment");
 			
-			System.out.println("First URL: "+ environment);
+			//System.out.println("First URL: "+ environment);
 			if(environment.equals("local")){
 				environmentURL =  "http://localhost:26904/api/test/url";
 				System.out.println("hi: " +environmentURL);
