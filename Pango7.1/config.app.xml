@@ -14,8 +14,8 @@
 	<entry key="waitBeforeClick">1</entry>
 	<entry key="MILLISECONDS">1000</entry>
 	<!-- Insured details: -->
-	<entry key="insuredName">עמיחי פרודקשיין</entry>
-	<entry key="insuredLastName">לא למחוק</entry>
+	<entry key="insuredName">בדיקה לא למחוק</entry>
+	<entry key="insuredLastName">עמיחי פרודשיין</entry>
 	<entry key="insuredIdDriver">00018</entry>
 	<entry key="insuredBirthDate">1988</entry>
 	<entry key="insuredLicenseIssueYear">2006</entry>

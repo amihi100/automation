@@ -215,7 +215,6 @@ public class sanityAllOptions {
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()}, 000)");
 			// Screen1.2: How many drivers.
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q-radio-1")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath(numberOfDrivers).click();
 			// Screen1.3: Youngest driver.
@@ -254,6 +253,7 @@ public class sanityAllOptions {
 			VarClass.driver.findElementByXPath(restrictions).click();
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new Exception("Failed in FIRST OFFER QUESTIONS.");
 		}
 	}
@@ -333,6 +333,7 @@ public class sanityAllOptions {
 			
 		
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new Exception("Failed in INITIAL OFFER SCREEN QUESTION");
 		}
 	}
@@ -400,7 +401,8 @@ public class sanityAllOptions {
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/a[2]").click();
 
-		} catch (Exception e) {
+		} catch (Exception e)                       {
+			e.printStackTrace();
 			throw new Exception("Failed in ***Call me wizard 1***");
 		}
 	}
