@@ -47,7 +47,6 @@ public class sanityAllOptions {
 	public sanityAllOptions(String env)
 			throws InvalidPropertiesFormatException, FileNotFoundException, IOException, InterruptedException {
 		//TimeUnit.SECONDS.sleep(10);
-
 		VarClass = new varClass();
 		try {
 			VarClass.defineVariables(env);
@@ -188,7 +187,7 @@ public class sanityAllOptions {
 	String gender = "/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
 
 //	@Test(priority = 1 , dependsOnGroups={"varClass.defineVariables"})
-	@Test(priority = 10)
+	@Test(priority = 11)
 	public void initialOfferQuestions() throws Exception {
 		try {
 			// VarClass.driver.navigate().refresh();
