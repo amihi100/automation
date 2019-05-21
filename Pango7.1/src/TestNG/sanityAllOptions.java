@@ -216,7 +216,8 @@ public class sanityAllOptions {
 			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()}, 000)");
 			// Screen1.2: How many drivers.
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath(numberOfDrivers).click();
+			VarClass.driver.findElementByXPath("//label[contains(text(),'ללא הגבלה')]").click();
+			//VarClass.driver.findElementByXPath(numberOfDrivers).click();
 			// Screen1.3: Youngest driver.
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-0")));
@@ -876,7 +877,13 @@ public class sanityAllOptions {
 
 		try {
 			TimeUnit.SECONDS.sleep(10);
+			//handke with iframe
 			VarClass.driver.switchTo().frame(0);
+			//handle with popups alerts
+			//Print the alert first:
+			//System.out.println(VarClass.driver.switchTo().alert().getText());
+			//VarClass.driver.switchTo().accept(); // Accept = ok done yes.
+			//VarClass.driver.switchTo().dismiss(); // Dont accept.
 			if (VarClass.appID) {
 
 				VarClass.driver.findElementByXPath("//*[@id=\"mat-input-0\"]").sendKeys(this.VarClass.cardFullName);
