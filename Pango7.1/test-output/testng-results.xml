@@ -1,48 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="4" ignored="0" total="11" passed="7">
+<testng-results skipped="0" failed="8" ignored="0" total="12" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Pango App Suite" duration-ms="182660" started-at="2019-05-21T12:37:15Z" finished-at="2019-05-21T12:40:18Z">
+  <suite name="Pango App Suite" duration-ms="261707" started-at="2019-06-12T13:00:13Z" finished-at="2019-06-12T13:04:35Z">
     <groups>
     </groups>
-    <test name="Automated test - End2End" duration-ms="182660" started-at="2019-05-21T12:37:15Z" finished-at="2019-05-21T12:40:18Z">
+    <test name="Automated test - End2End" duration-ms="261707" started-at="2019-06-12T13:00:13Z" finished-at="2019-06-12T13:04:35Z">
       <class name="TestNG.sanityAllOptions">
-        <test-method status="PASS" signature="initialOfferQuestions()[pri:10, instance:TestNG.sanityAllOptions@272113c4]" name="initialOfferQuestions" duration-ms="18623" started-at="2019-05-21T12:37:15Z" finished-at="2019-05-21T12:37:34Z">
+        <test-method status="PASS" signature="initialOfferQuestions()[pri:12, instance:TestNG.sanityAllOptions@272113c4]" name="initialOfferQuestions" duration-ms="19837" started-at="2019-06-12T13:00:13Z" finished-at="2019-06-12T13:00:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferQuestions -->
-        <test-method status="PASS" signature="initialOfferScreen()[pri:20, instance:TestNG.sanityAllOptions@272113c4]" name="initialOfferScreen" duration-ms="29915" started-at="2019-05-21T12:37:34Z" finished-at="2019-05-21T12:38:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialOfferScreen -->
-        <test-method status="PASS" signature="callMeWizard1()[pri:30, instance:TestNG.sanityAllOptions@272113c4]" name="callMeWizard1" duration-ms="7010" started-at="2019-05-21T12:38:03Z" finished-at="2019-05-21T12:38:11Z">
+        <test-method status="PASS" signature="callMeWizard1()[pri:20, instance:TestNG.sanityAllOptions@272113c4]" name="callMeWizard1" duration-ms="12892" started-at="2019-06-12T13:00:33Z" finished-at="2019-06-12T13:00:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- callMeWizard1 -->
-        <test-method status="PASS" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptions@272113c4]" name="finalOfferQuestions" duration-ms="52469" started-at="2019-05-21T12:38:11Z" finished-at="2019-05-21T12:39:03Z">
+        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptions@272113c4]" name="initialOfferScreen" duration-ms="20304" started-at="2019-06-12T13:00:46Z" finished-at="2019-06-12T13:01:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialOfferScreen -->
+        <test-method status="PASS" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptions@272113c4]" name="finalOfferQuestions" duration-ms="34788" started-at="2019-06-12T13:01:06Z" finished-at="2019-06-12T13:01:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferQuestions -->
-        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptions@272113c4]" name="finalOfferScreen" duration-ms="17204" started-at="2019-05-21T12:39:03Z" finished-at="2019-05-21T12:39:20Z">
+        <test-method status="FAIL" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptions@272113c4]" name="finalOfferScreen" duration-ms="30358" started-at="2019-06-12T13:01:41Z" finished-at="2019-06-12T13:02:12Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Failed in FINAL OFFER screen]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Failed in FINAL OFFER screen
+at TestNG.sanityAllOptions.finalOfferScreen(sanityAllOptions.java:706)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="PASS" signature="callMeWizard2()[pri:60, instance:TestNG.sanityAllOptions@272113c4]" name="callMeWizard2" duration-ms="10039" started-at="2019-05-21T12:39:20Z" finished-at="2019-05-21T12:39:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- callMeWizard2 -->
-        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.sanityAllOptions@272113c4]" name="covers" duration-ms="2334" started-at="2019-05-21T12:39:30Z" finished-at="2019-05-21T12:39:33Z">
+        <test-method status="FAIL" signature="covers()[pri:70, instance:TestNG.sanityAllOptions@272113c4]" name="covers" duration-ms="30331" started-at="2019-06-12T13:02:12Z" finished-at="2019-06-12T13:02:42Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Failed in COVERS screen]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Failed in COVERS screen
+at TestNG.sanityAllOptions.covers(sanityAllOptions.java:788)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="FAIL" signature="payments()[pri:80, instance:TestNG.sanityAllOptions@272113c4]" name="payments" duration-ms="5461" started-at="2019-05-21T12:39:33Z" finished-at="2019-05-21T12:39:38Z">
+        <test-method status="FAIL" signature="payments()[pri:80, instance:TestNG.sanityAllOptions@272113c4]" name="payments" duration-ms="31380" started-at="2019-06-12T13:02:42Z" finished-at="2019-06-12T13:03:13Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in PAYMENTS screen]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in PAYMENTS screen
-at TestNG.sanityAllOptions.payments(sanityAllOptions.java:870)
+at TestNG.sanityAllOptions.payments(sanityAllOptions.java:840)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -69,14 +125,82 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="FAIL" signature="iframeCreditGuard()[pri:90, instance:TestNG.sanityAllOptions@272113c4]" name="iframeCreditGuard" duration-ms="10018" started-at="2019-05-21T12:39:38Z" finished-at="2019-05-21T12:39:48Z">
+        <test-method status="FAIL" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptions@272113c4]" name="returnSteps" duration-ms="15" started-at="2019-06-12T13:03:13Z" finished-at="2019-06-12T13:03:13Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Failed in moveing BACKWARD]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Failed in moveing BACKWARD
+at TestNG.sanityAllOptions.returnSteps(sanityAllOptions.java:964)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- returnSteps -->
+        <test-method status="FAIL" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptions@272113c4]" name="forwardSteps" duration-ms="2026" started-at="2019-06-12T13:03:13Z" finished-at="2019-06-12T13:03:15Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Failed in moveing FORWARD]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Failed in moveing FORWARD
+at TestNG.sanityAllOptions.forwardSteps(sanityAllOptions.java:1052)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forwardSteps -->
+        <test-method status="FAIL" signature="iframeCreditGuard()[pri:90, instance:TestNG.sanityAllOptions@272113c4]" name="iframeCreditGuard" duration-ms="40403" started-at="2019-06-12T13:03:15Z" finished-at="2019-06-12T13:03:56Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in Iframe CreditGuard]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in Iframe CreditGuard
-at TestNG.sanityAllOptions.iframeCreditGuard(sanityAllOptions.java:915)
+at TestNG.sanityAllOptions.iframeCreditGuard(sanityAllOptions.java:1101)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -103,14 +227,14 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iframeCreditGuard -->
-        <test-method status="FAIL" signature="thankYouPage()[pri:100, instance:TestNG.sanityAllOptions@272113c4]" name="thankYouPage" duration-ms="25507" started-at="2019-05-21T12:39:48Z" finished-at="2019-05-21T12:40:14Z">
+        <test-method status="FAIL" signature="thankYouPage()[pri:100, instance:TestNG.sanityAllOptions@272113c4]" name="thankYouPage" duration-ms="35303" started-at="2019-06-12T13:03:56Z" finished-at="2019-06-12T13:04:31Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed to display thank you page]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed to display thank you page
-at TestNG.sanityAllOptions.thankYouPage(sanityAllOptions.java:931)
+at TestNG.sanityAllOptions.thankYouPage(sanityAllOptions.java:1118)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -137,14 +261,14 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thankYouPage -->
-        <test-method status="FAIL" signature="registeredAccount()[pri:110, instance:TestNG.sanityAllOptions@272113c4]" name="registeredAccount" duration-ms="4015" started-at="2019-05-21T12:40:14Z" finished-at="2019-05-21T12:40:18Z">
+        <test-method status="FAIL" signature="registeredAccount()[pri:110, instance:TestNG.sanityAllOptions@272113c4]" name="registeredAccount" duration-ms="4031" started-at="2019-06-12T13:04:31Z" finished-at="2019-06-12T13:04:35Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed to display thank you page]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed to display thank you page
-at TestNG.sanityAllOptions.registeredAccount(sanityAllOptions.java:951)
+at TestNG.sanityAllOptions.registeredAccount(sanityAllOptions.java:1139)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

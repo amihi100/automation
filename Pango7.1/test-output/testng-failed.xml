@@ -6,10 +6,14 @@
     <classes>
       <class name="TestNG.sanityAllOptions">
         <methods>
+          <include name="forwardSteps"/>
+          <include name="covers"/>
           <include name="thankYouPage"/>
+          <include name="finalOfferScreen"/>
           <include name="payments"/>
           <include name="iframeCreditGuard"/>
           <include name="registeredAccount"/>
+          <include name="returnSteps"/>
         </methods>
       </class> <!-- TestNG.sanityAllOptions -->
     </classes>

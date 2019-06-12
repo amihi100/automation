@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
 <suite thread-count="1" verbose="1" name="Pango App Suite"
 	annotations="JDK" parallel="tests">
   <parameter name = "env" value="dev"/> 
@@ -14,7 +13,7 @@
 <!-- <suite name="Pango App Suite" parallel="false" preserve-order="true"> 
 	<test name="Regression Dev - End2End"> <classes> <class name="TestNG.varClass" 
 	/> <class name="TestNG.DevSanityAllOptions" /> </classes> </test> </suite> -->
-
+	
 <!-- <suite thread-count="1" verbose="1" name="Pango App Suite" annotations="JDK" 
 	parallel="classes"> <test name="Dev - End2End"> <classes> <class name="TestNG.varClass" 
 	/> <class name="TestNG.DevSanityAllOptions" /> </classes> </test> </suite> -->

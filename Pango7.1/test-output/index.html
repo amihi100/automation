@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 8 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">11 methods, 4 failed,   7 passed</span>
+                    <span class="method-stats">12 methods, 8 failed,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -100,6 +100,21 @@
                       <a href="#" panel-name="suite-Pango_App_Suite" class="show-methods failed suite-Pango_App_Suite"> (show)</a> <!-- show-methods failed suite-Pango_App_Suite -->
                     </span>
                     <div class="method-list-content failed suite-Pango_App_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="covers">covers</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="finalOfferScreen">finalOfferScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="forwardSteps">forwardSteps</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="iframeCreditGuard">iframeCreditGuard</a> <!-- method navigator-link -->
@@ -113,6 +128,11 @@
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="registeredAccount">registeredAccount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="returnSteps">returnSteps</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -136,22 +156,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="callMeWizard2">callMeWizard2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="covers">covers</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="finalOfferQuestions">finalOfferQuestions</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Pango_App_Suite" title="TestNG.sanityAllOptions" hash-for-method="finalOfferScreen">finalOfferScreen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -184,11 +189,56 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="covers">
+                  </a> <!-- covers -->
+                  <span class="method-name">covers</span>
+                  <div class="stack-trace">java.lang.Exception: Failed in COVERS screen
+	at TestNG.sanityAllOptions.covers(sanityAllOptions.java:788)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="finalOfferScreen">
+                  </a> <!-- finalOfferScreen -->
+                  <span class="method-name">finalOfferScreen</span>
+                  <div class="stack-trace">java.lang.Exception: Failed in FINAL OFFER screen
+	at TestNG.sanityAllOptions.finalOfferScreen(sanityAllOptions.java:706)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="forwardSteps">
+                  </a> <!-- forwardSteps -->
+                  <span class="method-name">forwardSteps</span>
+                  <div class="stack-trace">java.lang.Exception: Failed in moveing FORWARD
+	at TestNG.sanityAllOptions.forwardSteps(sanityAllOptions.java:1052)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="iframeCreditGuard">
                   </a> <!-- iframeCreditGuard -->
                   <span class="method-name">iframeCreditGuard</span>
                   <div class="stack-trace">java.lang.Exception: Failed in Iframe CreditGuard
-	at TestNG.sanityAllOptions.iframeCreditGuard(sanityAllOptions.java:915)
+	at TestNG.sanityAllOptions.iframeCreditGuard(sanityAllOptions.java:1101)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -203,7 +253,7 @@
                   </a> <!-- payments -->
                   <span class="method-name">payments</span>
                   <div class="stack-trace">java.lang.Exception: Failed in PAYMENTS screen
-	at TestNG.sanityAllOptions.payments(sanityAllOptions.java:870)
+	at TestNG.sanityAllOptions.payments(sanityAllOptions.java:840)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -218,7 +268,22 @@
                   </a> <!-- registeredAccount -->
                   <span class="method-name">registeredAccount</span>
                   <div class="stack-trace">java.lang.Exception: Failed to display thank you page
-	at TestNG.sanityAllOptions.registeredAccount(sanityAllOptions.java:951)
+	at TestNG.sanityAllOptions.registeredAccount(sanityAllOptions.java:1139)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="returnSteps">
+                  </a> <!-- returnSteps -->
+                  <span class="method-name">returnSteps</span>
+                  <div class="stack-trace">java.lang.Exception: Failed in moveing BACKWARD
+	at TestNG.sanityAllOptions.returnSteps(sanityAllOptions.java:964)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -233,7 +298,7 @@
                   </a> <!-- thankYouPage -->
                   <span class="method-name">thankYouPage</span>
                   <div class="stack-trace">java.lang.Exception: Failed to display thank you page
-	at TestNG.sanityAllOptions.thankYouPage(sanityAllOptions.java:931)
+	at TestNG.sanityAllOptions.thankYouPage(sanityAllOptions.java:1118)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -259,30 +324,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="callMeWizard2">
-                  </a> <!-- callMeWizard2 -->
-                  <span class="method-name">callMeWizard2</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="covers">
-                  </a> <!-- covers -->
-                  <span class="method-name">covers</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="finalOfferQuestions">
                   </a> <!-- finalOfferQuestions -->
                   <span class="method-name">finalOfferQuestions</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="finalOfferScreen">
-                  </a> <!-- finalOfferScreen -->
-                  <span class="method-name">finalOfferScreen</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -354,56 +398,60 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(11);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'finalOfferQuestions')
+data.setCell(0, 1, 'iframeCreditGuard')
 data.setCell(0, 2, 'TestNG.sanityAllOptions')
-data.setCell(0, 3, 52469);
+data.setCell(0, 3, 40403);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'initialOfferScreen')
+data.setCell(1, 1, 'thankYouPage')
 data.setCell(1, 2, 'TestNG.sanityAllOptions')
-data.setCell(1, 3, 29915);
+data.setCell(1, 3, 35303);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'thankYouPage')
+data.setCell(2, 1, 'finalOfferQuestions')
 data.setCell(2, 2, 'TestNG.sanityAllOptions')
-data.setCell(2, 3, 25507);
+data.setCell(2, 3, 34788);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'initialOfferQuestions')
+data.setCell(3, 1, 'payments')
 data.setCell(3, 2, 'TestNG.sanityAllOptions')
-data.setCell(3, 3, 18623);
+data.setCell(3, 3, 31380);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'finalOfferScreen')
 data.setCell(4, 2, 'TestNG.sanityAllOptions')
-data.setCell(4, 3, 17204);
+data.setCell(4, 3, 30358);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'callMeWizard2')
+data.setCell(5, 1, 'covers')
 data.setCell(5, 2, 'TestNG.sanityAllOptions')
-data.setCell(5, 3, 10039);
+data.setCell(5, 3, 30331);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'iframeCreditGuard')
+data.setCell(6, 1, 'initialOfferScreen')
 data.setCell(6, 2, 'TestNG.sanityAllOptions')
-data.setCell(6, 3, 10018);
+data.setCell(6, 3, 20304);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'callMeWizard1')
+data.setCell(7, 1, 'initialOfferQuestions')
 data.setCell(7, 2, 'TestNG.sanityAllOptions')
-data.setCell(7, 3, 7010);
+data.setCell(7, 3, 19837);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'payments')
+data.setCell(8, 1, 'callMeWizard1')
 data.setCell(8, 2, 'TestNG.sanityAllOptions')
-data.setCell(8, 3, 5461);
+data.setCell(8, 3, 12892);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'registeredAccount')
 data.setCell(9, 2, 'TestNG.sanityAllOptions')
-data.setCell(9, 3, 4015);
+data.setCell(9, 3, 4031);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'covers')
+data.setCell(10, 1, 'forwardSteps')
 data.setCell(10, 2, 'TestNG.sanityAllOptions')
-data.setCell(10, 3, 2334);
+data.setCell(10, 3, 2026);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'returnSteps')
+data.setCell(11, 2, 'TestNG.sanityAllOptions')
+data.setCell(11, 3, 15);
 window.suiteTableData['Pango_App_Suite']= { tableData: data, tableDiv: 'times-div-Pango_App_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Pango_App_Suite">
               </div> <!-- times-div-Pango_App_Suite -->
             </div> <!-- times-div -->
@@ -435,52 +483,64 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">initialOfferScreen</span>
-                <span class="method-start">18626 ms</span>
+                <span class="method-name">callMeWizard1</span>
+                <span class="method-start">19840 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">callMeWizard1</span>
-                <span class="method-start">48543 ms</span>
+                <span class="method-name">initialOfferScreen</span>
+                <span class="method-start">32733 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">finalOfferQuestions</span>
-                <span class="method-start">55554 ms</span>
+                <span class="method-start">53039 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">finalOfferScreen</span>
-                <span class="method-start">108025 ms</span>
+                <span class="method-start">87829 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">callMeWizard2</span>
-                <span class="method-start">125234 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">covers</span>
-                <span class="method-start">135275 ms</span>
+                <span class="method-start">118189 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">payments</span>
-                <span class="method-start">137610 ms</span>
+                <span class="method-start">148522 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">returnSteps</span>
+                <span class="method-start">179903 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">forwardSteps</span>
+                <span class="method-start">179920 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">iframeCreditGuard</span>
-                <span class="method-start">143073 ms</span>
+                <span class="method-start">181947 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">thankYouPage</span>
-                <span class="method-start">153093 ms</span>
+                <span class="method-start">222354 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">registeredAccount</span>
-                <span class="method-start">178602 ms</span>
+                <span class="method-start">257658 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
