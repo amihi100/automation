@@ -180,7 +180,7 @@ public class sanityAllOptions {
 //	@Test(priority = 1 , dependsOnGroups={"varClass.defineVariables"})
 	@Test(priority = 12)
 	public void initialOfferQuestions() throws Exception {
-		try {	
+		try {
 			Instant start = Instant.now();
 			// Screen1.1: Start insurance date.
 			VarClass.wait = new WebDriverWait(VarClass.driver, VarClass.waitForElement);
@@ -200,8 +200,8 @@ public class sanityAllOptions {
 			TimeUnit.SECONDS.sleep(1);
 			js.executeScript("window.pickerInstance.showOrHidePicker()");
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			//JavascriptExecutor js2 = (JavascriptExecutor) VarClass.driver;
-			//js2.executeScript("$(\".accessibility-menu\").show();");
+			JavascriptExecutor js2 = (JavascriptExecutor) VarClass.driver;
+			js2.executeScript("$(\".accessibility-menu\").show();");
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			// This is the original:
 			// $(".accessibility-menu").show();
@@ -253,11 +253,11 @@ public class sanityAllOptions {
 		}
 	}
 
-	//@Test(enabled=false)
-@Test(priority = 20)
+	// @Test(enabled=false)
+	@Test(priority = 20)
 	public void callMeWizard1() throws Exception {
 		try {
-			
+
 			TimeUnit.SECONDS.sleep(7);
 			// Call me back function.
 
@@ -301,8 +301,7 @@ public class sanityAllOptions {
 			throw new Exception("Failed in ***Call me wizard 1***");
 		}
 	}
-	
-	
+
 	@Test(priority = 30)
 	public void initialOfferScreen() throws Exception {
 		try {
@@ -377,7 +376,7 @@ public class sanityAllOptions {
 
 			VarClass.driver.findElementByXPath("//modal-dialog[15]//button[1]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			
+
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/a[1]").click();
 
@@ -387,36 +386,13 @@ public class sanityAllOptions {
 		}
 	}
 
-
 	@Test(priority = 40)
 	public void finalOfferQuestions() throws Exception {
 		// FINAL OFFER SCREENS QUESTIONS.
 		try {
-			// Screen2.1: Policy owner.
-//
-//			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-1-firstName-0")));
-//			// Policy owner screen needs 3 seconds to load (after element is visible).
-//			TimeUnit.SECONDS.sleep(3);
-//			VarClass.driver.findElementByXPath(
-//					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]")
-//					.click();
-////
-////			TimeUnit.MILLISECONDS.sleep(500);
-////			VarClass.driver.findElementByXPath(
-////					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[2]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]")
-////					.click();
-//			TimeUnit.MILLISECONDS.sleep(500);
-//			VarClass.driver.findElementByXPath(gender).click();
-////			TimeUnit.MILLISECONDS.sleep(500);
-////			VarClass.driver.findElementByXPath(
-////					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[2]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]")
-////					.click();
-//			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/div/button[1]")
-//					.click();
-			// Screen2.2: Privacy details of policy owner.
+
+			// Screen2.1: Privacy details of policy owner.
+			
 			this.VarClass.wait
 					.until(ExpectedConditions.visibilityOfElementLocated(By.id("label-for-step-1-birthDate-4")));
 			TimeUnit.SECONDS.sleep(1);
@@ -437,9 +413,9 @@ public class sanityAllOptions {
 					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[4]/question-wrapper/div/div/combo-box/div/select")
 					.click();
 			// birthDate
+			
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			// stepTwoBirthPicker
-
 			VarClass.driver.findElementByXPath("//*[@id=\"step-1-birthDate-4\"]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 
@@ -448,27 +424,21 @@ public class sanityAllOptions {
 //					+ ", 1, 0, 0, 0, 0, 0))");
 			TimeUnit.SECONDS.sleep(1);
 			// VarClass.driver.findElementByXPath("//*[@id=\"step-2-birthDate-3\"]").click();
-			TimeUnit.SECONDS.sleep(1);
 			VarClass.driver.findElementByXPath("//*[@id=\"ap-button-set\"]").click();
 			// licenseIssueYear
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(2);
 //			js.executeScript("window.stepTwoLicensePicker.setSelectedDate(new Date("
 //					+ this.VarClass.insuredLicenseIssueYear + ", 6, 14, 0, 0, 0, 0))");
-			TimeUnit.SECONDS.sleep(1);
-			// licenseIssueYear
-
-			VarClass.driver.findElementByXPath(
-					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[6]/question-wrapper/div/div/text-field/div")
+			VarClass.driver.findElementByXPath("//*[@id=\"label-for-step-1-licenseIssueYear-5\"]")
 					.click();
-			TimeUnit.SECONDS.sleep(1);
-			//
+			TimeUnit.SECONDS.sleep(2);
 			VarClass.driver.findElementByXPath("//*[@id=\"ap-button-set\"]").click();
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick+1);
 			VarClass.driver
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/div/button[1]")
 					.click();
-			// Screen2.3: Contact details of policy owner
+			// Screen2.2: Contact details of policy owner
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-2-cityID-0"))).click();
 			TimeUnit.SECONDS.sleep(1);
 			// city:
@@ -494,7 +464,7 @@ public class sanityAllOptions {
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[2]/div/div/button[1]")
 					.click();
-			// Screen2.4: 3 questions for driver and policy owner.
+			// Screen2.3: 3 questions for driver and policy owner.
 			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-3-q-0-radio-1")));
 			TimeUnit.SECONDS.sleep(1);
 			// All No:
@@ -524,7 +494,7 @@ public class sanityAllOptions {
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[3]/div/div/button[1]")
 					.click();
-			// Screen2.5: questions for criminal record and policy refuse.
+			// Screen2.4: questions for criminal record and policy refuse.
 			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-6-q-0-radio-1")));
 			TimeUnit.SECONDS.sleep(1);
 			// All YES:
@@ -547,7 +517,7 @@ public class sanityAllOptions {
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[7]/div/div/button[1]")
 					.click();
-			// Screen2.6: Agreements sign V.
+			// Screen2.5: Agreements sign V.
 			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chk-step9-q2-lbl")));
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			// click V:
@@ -707,8 +677,8 @@ public class sanityAllOptions {
 		}
 	}
 
-	@Test(enabled=false)
-	//@Test(priority = 60)
+	@Test(enabled = false)
+	// @Test(priority = 60)
 	public void callMeWizard2() throws Exception {
 		try {
 			// Call me back function Wizard #2.
@@ -879,26 +849,27 @@ public class sanityAllOptions {
 
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			JavascriptExecutor jse = (JavascriptExecutor) VarClass.driver;
-		jse.executeScript("document.getElementById('step-0-q7.1-radio-2').focus();");
-			
-			
-			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
-		js.executeScript("$('#media-only').trigger('swipe', {startX: 0.95})");
-			
+			jse.executeScript("document.getElementById('step-0-q7.1-radio-2').focus();");
 
-VarClass.driver.findElementByXPath("/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-header/h1").click();
-			
+			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
+			js.executeScript("$('#media-only').trigger('swipe', {startX: 0.95})");
+
+			VarClass.driver
+					.findElementByXPath(
+							"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-header/h1")
+					.click();
+
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q7.1-radio-2")));
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 
-			WebElement element12 = VarClass.driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-offer[1]/aw-wizard[1]/div[1]/aw-wizard-step[8]/div[1]/app-step-content-vertical-options-view[1]/ul[1]/li[2]/label[1]"));
+			WebElement element12 = VarClass.driver.findElement(By.xpath(
+					"/html[1]/body[1]/app-root[1]/app-offer[1]/aw-wizard[1]/div[1]/aw-wizard-step[8]/div[1]/app-step-content-vertical-options-view[1]/ul[1]/li[2]/label[1]"));
 			WebElement target12 = VarClass.driver.findElement(By.className("accessibility-menu"));
-		      Thread.sleep(250);
+			Thread.sleep(250);
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			(new Actions(VarClass.driver)).dragAndDrop(element12, target12).perform();
 
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick + 1);
-
 
 			// screen7
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);

@@ -5,23 +5,14 @@ import java.sql.Date;
 import java.text.MessageFormat;
 import java.time.Instant;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.mobile.NetworkConnection.ConnectionType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+
 
 public class varClass {
 	public String environmentURL, environment, panguGUID, carNumber, numberOfDrivers, screenShotPath, filename,
@@ -146,7 +137,7 @@ public class varClass {
 
 			driver.get(environmentURL);
 			driver.manage().window().setSize(windowDimension);
-
+			driver.manage().deleteAllCookies();
 			TimeUnit.SECONDS.sleep(waitBeforeClick);
 
 			// Extract URL for text.
