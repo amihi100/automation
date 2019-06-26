@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-
-<suite name="Test-class Suite" parallel="tests" thread-count="2">
-
-	<parameter name="env" value="dev" />
+	
+	<suite name="Test-class Suite" parallel="tests" thread-count="2">
+	
+	
+	
+	
+	
+  <parameter name = "env" value="dev"/> 
 	<test name="Automated test - End2End">
 		<classes>
 			<!-- <class name="TestNG.varClass" /> -->
-			<class name="TestNG.sanityAllOptions">
-				<methods>
-					<!-- 	<exclude name="callMeWizard1"/>-->
-			
-				</methods>
-			</class>
+			<class name="TestNG.sanityAllOptions" />
 		</classes>
 	</test>
-
-
-
+	
+	  <test name="Test-class test 3">
+        <parameter name="env" value="stage" />
+        <classes>
+            <class name="TestNG.sanityAllOptions" />
+        </classes>
+    </test>
+	
+	
+	
 </suite>
 <!-- <suite name="Pango App Suite" parallel="false" preserve-order="true"> 
 	<test name="Regression Dev - End2End"> <classes> <class name="TestNG.varClass" 
 	/> <class name="TestNG.DevSanityAllOptions" /> </classes> </test> </suite> -->
-
+	
 <!-- <suite thread-count="1" verbose="1" name="Pango App Suite" annotations="JDK" 
 	parallel="classes"> <test name="Dev - End2End"> <classes> <class name="TestNG.varClass" 
 	/> <class name="TestNG.DevSanityAllOptions" /> </classes> </test> </suite> -->

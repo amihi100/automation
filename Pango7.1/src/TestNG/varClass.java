@@ -73,7 +73,6 @@ public class varClass {
 				environmentURL = "https://" + varProps.getProperty("environment") + ".pango-ins.co.il/api/test/url?ln="
 						+ carNumber + "&ui=" + UUID.randomUUID();
 			}
-
 			System.out.println("Environment is: " + environmentURL);
 			thankYouURL = "https://" + varProps.getProperty("environment") + " .pango-ins.co.il/thanks";
 			// Define resolution - iPhone X (375 x 812).

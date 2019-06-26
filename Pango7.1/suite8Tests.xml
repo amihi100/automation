@@ -13,7 +13,6 @@
             <class name="TestNG.sanityAllOptions" />
         </classes>
     </test>
-
     <test name="Test-class test 3">
         <parameter name="env" value="dev" />
         <classes>

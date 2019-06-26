@@ -34,7 +34,7 @@ import org.testng.annotations.Parameters;
  *
  */
 
-public class sanityAllOptions {
+public class sanityAllOptions{
 	@Parameters("env")
 	public sanityAllOptions(String env)
 			throws InvalidPropertiesFormatException, FileNotFoundException, IOException, InterruptedException {
@@ -253,6 +253,18 @@ public class sanityAllOptions {
 		}
 	}
 
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
 	// @Test(enabled=false)
 	@Test(priority = 20)
 	public void callMeWizard1() throws Exception {
@@ -260,14 +272,12 @@ public class sanityAllOptions {
 
 			TimeUnit.SECONDS.sleep(7);
 			// Call me back function.
-
+			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("bid-footer")));
 			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[2]/ul/li[1]/a/img").click();
 			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
-
 			// if running with REAL APP ID:
 			if (VarClass.appID) {
 				System.out.println(VarClass.appID);
-
 				boolean appPhoneNumber = VarClass.driver
 						.findElementByXPath("//*[@id=\"modal-call-back\"]/div[1]/div/div[2]/p/a").isDisplayed();
 				if (appPhoneNumber) {
@@ -392,7 +402,7 @@ public class sanityAllOptions {
 		try {
 
 			// Screen2.1: Privacy details of policy owner.
-			
+
 			this.VarClass.wait
 					.until(ExpectedConditions.visibilityOfElementLocated(By.id("label-for-step-1-birthDate-4")));
 			TimeUnit.SECONDS.sleep(1);
@@ -413,7 +423,7 @@ public class sanityAllOptions {
 					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[4]/question-wrapper/div/div/combo-box/div/select")
 					.click();
 			// birthDate
-			
+
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			// stepTwoBirthPicker
 			VarClass.driver.findElementByXPath("//*[@id=\"step-1-birthDate-4\"]").click();
@@ -429,11 +439,10 @@ public class sanityAllOptions {
 			TimeUnit.SECONDS.sleep(2);
 //			js.executeScript("window.stepTwoLicensePicker.setSelectedDate(new Date("
 //					+ this.VarClass.insuredLicenseIssueYear + ", 6, 14, 0, 0, 0, 0))");
-			VarClass.driver.findElementByXPath("//*[@id=\"label-for-step-1-licenseIssueYear-5\"]")
-					.click();
+			VarClass.driver.findElementByXPath("//*[@id=\"label-for-step-1-licenseIssueYear-5\"]").click();
 			TimeUnit.SECONDS.sleep(2);
 			VarClass.driver.findElementByXPath("//*[@id=\"ap-button-set\"]").click();
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick+1);
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			VarClass.driver
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/div/button[1]")
@@ -533,14 +542,14 @@ public class sanityAllOptions {
 			VarClass.driver.findElementByXPath("//*[@id=\"modal-general-ext\"]/div[1]/div/div[2]/p/span").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			// close privacy policy second screen.
-			VarClass.driver.findElementByXPath("//*[@id=\"modal-general-ext\"]/div[1]/div/div[1]/button/img").click();
+			VarClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
+					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath(
 					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/ul/li[2]/question-wrapper/div/div/plain-text/p/span")
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//*[@id=\"modal-general-ext\"]/div[1]/div/div[1]/button/img").click();
-
 //			VarClass.driver.findElementByXPath(
 //					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[9]/div/ul/li[2]/question-wrapper/div/div/plain-text/p/span")
 //					.click();
@@ -762,9 +771,7 @@ public class sanityAllOptions {
 
 	@Test(priority = 80)
 	public void payments() throws Exception {
-		// Screens: Final offer, Covers and payments.
 		try {
-			// Screen: Payments.
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("//ul[@class='list-questions account']//label[contains(text(),'תשלום אחד')]")));
