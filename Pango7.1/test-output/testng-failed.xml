@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Pango App Suite]" parallel="tests">
-  <parameter name="env" value="dev"/>
-  <test thread-count="1" name="Automated test - End2End(failed)" parallel="tests">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test-class Suite]" parallel="tests">
+  <parameter name="env" value="dev2Real"/>
+  <test thread-count="2" name="Automated test - End2End(failed)" parallel="tests">
     <classes>
-      <class name="TestNG.sanityAllOptions">
+      <class name="TestNG.sanityAllOptionsTest">
         <methods>
           <include name="forwardSteps"/>
-          <include name="covers"/>
-          <include name="thankYouPage"/>
-          <include name="finalOfferScreen"/>
-          <include name="payments"/>
-          <include name="iframeCreditGuard"/>
-          <include name="registeredAccount"/>
           <include name="returnSteps"/>
+          <include name="thankYouPage"/>
+          <include name="registeredAccount"/>
+          <include name="iframeCreditGuard"/>
         </methods>
-      </class> <!-- TestNG.sanityAllOptions -->
+      </class> <!-- TestNG.sanityAllOptionsTest -->
     </classes>
   </test> <!-- Automated test - End2End(failed) -->
-</suite> <!-- Failed suite [Pango App Suite] -->
+</suite> <!-- Failed suite [Test-class Suite] -->

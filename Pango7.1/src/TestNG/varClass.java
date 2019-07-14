@@ -13,13 +13,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class varClass {
-	public String environmentURL, environment, panguGUID, carNumber, numberOfDrivers, screenShotPath, filename,
-			insuredName, insuredLastName, insuredIdDriver, insuredBirthDate, insuredLicenseIssueYear, city, street,
-			houseNumber, email, cellphone, wizardPhone0, wizardPhone1, driver1Name, cardNumber, driver1LastName,
-			driver1Id, driver1BirthDate, cardPersonalId, driver1LicenseIssueYear, cardFullName, cardMonth, cardYear,
-			localApp, httpOrHttps;
+	public String environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers, drivingYears,
+			mortgageCar, yearsOfInsurance, claimsIn3Years, howManyClaims, restrictions, screenShotPath, filename,
+			insuredName, insuredLastName, insuredIdDriver, genderPolicyOwner, insuredBirthDate, insuredLicenseIssueYear,
+			city, street, houseNumber, email, cellphone, wizardPhone0, wizardPhone1, driver1Name, driver1LastName,
+			driver1Id, driver1BirthDate, driver2Name, driver2LastName, driver2Id, driver2BirthDate,
+			driver2LicenseIssueYear, cardNumber, cardPersonalId, driver1LicenseIssueYear, cardFullName, cardMonth,
+			cardYear, localApp, httpOrHttps;
 
 	public boolean appID;
 	public String thankYouURL;
@@ -81,13 +82,25 @@ public class varClass {
 			waitForElement = Integer.parseInt(varProps.getProperty("waitForElement"));
 			waitBeforeClick = Integer.parseInt(varProps.getProperty("waitBeforeClick"));
 			MILLISECONDS = Integer.parseInt(varProps.getProperty("MILLISECONDS"));
-			// Define scenario variables
+			// Define scenario variables - First offer:
 			appID = Boolean.valueOf(varProps.getProperty("appID"));
+			startInsuranceDate = varProps.getProperty("startInsuranceDate");
 			numberOfDrivers = varProps.getProperty("numberOfDrivers");
-
+			drivingYears = varProps.getProperty("drivingYears");
+			mortgageCar = varProps.getProperty("mortgageCar");
+			yearsOfInsurance = varProps.getProperty("yearsOfInsurance");
+			claimsIn3Years = varProps.getProperty("claimsIn3Years");
+			howManyClaims = varProps.getProperty("howManyClaims");
+			restrictions = varProps.getProperty("restrictions");
+			// Define scenario variables - Second offer:
+			// <!-- Policy owner details: -->
+			wizardPhone0 = varProps.getProperty("wizardPhone0");
+			wizardPhone1 = varProps.getProperty("wizardPhone1");
 			insuredName = varProps.getProperty("insuredName");
 			insuredLastName = varProps.getProperty("insuredLastName");
 			insuredIdDriver = varProps.getProperty("insuredIdDriver");
+			genderPolicyOwner = varProps.getProperty("genderPolicyOwner");
+
 			insuredBirthDate = varProps.getProperty("insuredBirthDate");
 			insuredLicenseIssueYear = varProps.getProperty("insuredLicenseIssueYear");
 			city = varProps.getProperty("city");
@@ -95,14 +108,18 @@ public class varClass {
 			houseNumber = varProps.getProperty("houseNumber");
 			email = varProps.getProperty("email");
 			cellphone = varProps.getProperty("cellphone");
-			wizardPhone0 = varProps.getProperty("wizardPhone0");
-			wizardPhone1 = varProps.getProperty("wizardPhone1");
-			// Driver1 details:
+			// ADditional Driver1 details:
 			driver1Name = varProps.getProperty("driver1Name");
 			driver1LastName = varProps.getProperty("driver1LastName");
 			driver1Id = varProps.getProperty("driver1Id");
 			driver1BirthDate = varProps.getProperty("driver1BirthDate");
 			driver1LicenseIssueYear = varProps.getProperty("driver1LicenseIssueYear");
+			// ADditional Driver2 details:
+			driver2Name = varProps.getProperty("driver2Name");
+			driver2LastName = varProps.getProperty("driver2LastName");
+			driver2Id = varProps.getProperty("driver2Id");
+			driver2BirthDate = varProps.getProperty("driver2BirthDate");
+			driver2LicenseIssueYear = varProps.getProperty("driver2LicenseIssueYear");
 			// CreditGaurd details
 			cardFullName = varProps.getProperty("cardFullName");
 			cardPersonalId = varProps.getProperty("cardPersonalId");
@@ -110,15 +127,14 @@ public class varClass {
 			cardMonth = varProps.getProperty("cardMonth");
 			cardYear = varProps.getProperty("cardYear");
 			// Define path of chromedriver.exe file.
-			//System.setProperty("webdriver.chrome.driver",
-			//		"C:\\Users\\amichaito\\Desktop\\Code\\Selenium\\PangoAPP\\chromedriver.exe");
-			
-			//C:\Users\amichaito\Desktop\chromedriver_win32\chromedriver.exe
-			
+			// System.setProperty("webdriver.chrome.driver",
+			// "C:\\Users\\amichaito\\Desktop\\Code\\Selenium\\PangoAPP\\chromedriver.exe");
+
+			// C:\Users\amichaito\Desktop\chromedriver_win32\chromedriver.exe
+
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\amichaito\\Desktop\\chromedriver2.46\\chromedriver.exe");
-			
-			
+
 			// Define path to save screenShot of first screen (start date).
 			screenShotPath = "c:\\tmp1\\";
 

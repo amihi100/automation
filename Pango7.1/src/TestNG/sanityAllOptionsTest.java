@@ -12,8 +12,10 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Calendar;
 import java.util.InvalidPropertiesFormatException;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -22,6 +24,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import com.google.errorprone.annotations.Var;
+
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Parameters;
@@ -34,16 +39,15 @@ import org.testng.annotations.Parameters;
  *
  */
 
-public class sanityAllOptions{
+public class sanityAllOptionsTest {
 	@Parameters("env")
-	public sanityAllOptions(String env)
+	public sanityAllOptionsTest(String env)
 			throws InvalidPropertiesFormatException, FileNotFoundException, IOException, InterruptedException {
 		// TimeUnit.SECONDS.sleep(10);
 		VarClass = new varClass();
 		try {
 			VarClass.defineVariables(env);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -62,120 +66,145 @@ public class sanityAllOptions{
 	int startDateYear = Calendar.getInstance().get(Calendar.YEAR);
 	// static int startDateMonth = Calendar.getInstance().get(Calendar.MONTH)+9;
 	int startDateMonth = Calendar.getInstance().get(Calendar.MONTH);
+	// Fix for problem MONTH:
 	int startDateDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+	String dateWithZero;
+	String numOfDrivers = "";
 
-	/**
-	 * // Screen1.2 How many drivers: 1 driver: static String numberOfDrivers =
-	 * 
-	 * 
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[1]/label";
-	 * 2 drivers: static String numberOfDrivers =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[2]/label";
-	 * 3 drivers: static String numberOfDrivers =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[3]/label";
-	 * All drivers: static String numberOfDrivers =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[4]/label";
-	 */
-	// 1 driver:
+	public int monthDatePlus1(String dayOrMonth, int valueOfDayOrMonth) {
 
-	/**
-	 * public String oneDriver, twoDrivers, threeDrivers, allDrivers;
-	 * 
-	 * oneDriver =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[1]/label";
-	 * twoDrivers =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[2]/label";
-	 * threeDrivers =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[3]/label";
-	 * allDrivers =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[4]/label";
-	 **/
+		if (dayOrMonth == "month") {
+			if (valueOfDayOrMonth < 12) {
+				valueOfDayOrMonth = valueOfDayOrMonth + 1;
+			}
+			System.out.println("month plus1: " + valueOfDayOrMonth);
+		}
+		if (dayOrMonth == "day") {
+			if (valueOfDayOrMonth < 12) {
+				valueOfDayOrMonth = valueOfDayOrMonth + 1;
+			}
+			System.out.println("month plus1: " + valueOfDayOrMonth);
 
-	String numberOfDrivers = "step-0-q4-radio-4";
+		}
 
-	/**
-	 * // Screen1.3: Youngest driver age. All age options {val: 20, label: "17-20"}
-	 * {val: 23, label: "21-23"} {val: 26, label: "24-26"} {val: 29, label: "27-29"}
-	 * {val: 34, label: "30-34"} {val: 39, label: "35-39"} {val: 46, label: "40-46"}
-	 * {val: 49, label: "47-49"} {val: 59, label: "50-59"} {val: 64, label: "60-64"}
-	 * {val: 69, label: "65-69"} {val: 74, label: "70-74"} {val: 77, label: "+75"}
-	 */
-	String youngestDriverAge = "34";
+		return valueOfDayOrMonth;
+	}
 
-	/**
-	 * // Screen 1.4 Vars: Youngest driver license years old. zeorYearsOldDriver:
-	 * static String licenseOfYoungestDriver =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[4]/div/app-step-content-vertical-options-view/ul/li[1]/label";
-	 * oneYearOldDriver: static String licenseOfYoungestDriver =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[4]/div/app-step-content-vertical-options-view/ul/li[2]/label";
-	 * twoNineYearsOldDriver: static String licenseOfYoungestDriver =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[4]/div/app-step-content-vertical-options-view/ul/li[3]/label";
-	 * tenFiftenYearsOldDriver: static String licenseOfYoungestDriver =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[4]/div/app-step-content-vertical-options-view/ul/li[4]/label";
-	 * sixteenPlusYearsOldDriver: static String licenseOfYoungestDriver =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[4]/div/app-step-content-vertical-options-view/ul/li[5]/label";
-	 */
-	// tenFiftenYearsOldDriver:
-	// String licenseOfYoungestDriver =
-	// "VarClass.driver.findElementByXPath("//label[contains(text(),'10')"]).click()";
-	/**
-	 * Screen 1.5 Mortgaged car. Mortgaged NO: static String mortgagedCar =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[5]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1];
-	 * Mortgaged YES: static String mortgagedCar =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[5]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
-	 */
-	// Mortgaged YES:
-	String mortgagedCar = "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[5]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
-	/**
-	 * Screen 1.6: 3 years insurance. Yes 3 years insurance: static String
-	 * threeYearsInsurance =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[6]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
-	 * No 3 years ins static String threeYearsInsurance =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[6]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
-	 */
-	// Yes 3 years insurance:
-	String threeYearsInsurance = "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[6]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
-	/**
-	 * Screen 1.7: Claims in 3 years. No claims in 3 years: static String
-	 * claimsIn3Years =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[7]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
-	 * Yes claims in 3 years: static String claimsIn3Years =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[7]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
-	 */
-	// Yes claims in 3 years:
-	String claimsIn3Years = "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[7]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
+	public String addZero(int oneDigit) {
+		if (String.valueOf(oneDigit).length() == 1) {
+			dateWithZero = "0" + oneDigit;
+			return dateWithZero;
+		}
+		return Integer.toString(oneDigit);
+	}
 
-	/**
-	 * Screen 1.8 how many claims 0 claims static String howManyClaims =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-content-vertical-options-view/ul/li[1]/label";
-	 * 1 claim static String howManyClaims =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-content-vertical-options-view/ul/li[2]/label";
-	 * more than 1 claim static String howManyClaims =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-content-vertical-options-view/ul/li[3]/label";
-	 * 
-	 * @throws Exception
-	 */
-	// one claim
-	String howManyClaims = "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-content-vertical-options-view/ul/li[2]/label";
+	// Screen 1.2
+	public String numberOfDrivers(String numOfDrivers) {
+		numOfDrivers = VarClass.numberOfDrivers;
+		switch (numOfDrivers) {
+		case "1":
+			numOfDrivers = "//label[contains(text(),'נהג אחד')]";
+			break;
 
-	/*
-	 * Screen 1.9 Restriction in 3 years No restrictions: static String restrictions
-	 * =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[9]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
-	 * Yes restrictions: static String restrictions =
-	 * "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[9]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
-	 */
-	// No restrictions
-	String restrictions = "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[9]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
+		case "2":
+			numOfDrivers = "//label[contains(text(),'2 נהגים')]";
+			break;
 
-	/**
-	 * Screen 2.1 Gender MALE: static String gender =
-	 * "/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
-	 * FEMALE: static String gender =
-	 * "/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
-	 */
-	// Female:
-	String gender = "/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
+		case "3":
+			numOfDrivers = "//label[contains(text(),'3 נהגים')]";
+			break;
+
+		case "9":
+			numOfDrivers = "//label[contains(text(),'ללא הגבלה')]";
+			break;
+
+		default:
+			numOfDrivers = "//label[contains(text(),'ללא הגבלה')]";
+			break;
+		}
+		return numOfDrivers;
+	}
+
+	// TODO: add screen 1.3 function.
+	// Screen 1.4 driverYears
+	public String driverYears(String drivingYearsNumber) {
+
+		drivingYearsNumber = VarClass.drivingYears;
+		if (Integer.parseInt(VarClass.drivingYears) == 0) {
+			drivingYearsNumber = "//label[contains(text(),'0 שנים')]";
+		}
+
+		else if (Integer.parseInt(VarClass.drivingYears) == 1) {
+			drivingYearsNumber = "//label[contains(text(),'שנה אחת')]";
+		} else if (Integer.parseInt(VarClass.drivingYears) > 1 && Integer.parseInt(VarClass.drivingYears) < 10) {
+			drivingYearsNumber = "//label[contains(text(),'2-9 שנים')]";
+		} else if (Integer.parseInt(VarClass.drivingYears) > 9 && Integer.parseInt(VarClass.drivingYears) < 16) {
+			drivingYearsNumber = "//label[contains(text(),'10-15 שנים')]";
+		} else if (Integer.parseInt(VarClass.drivingYears) > 15) {
+			drivingYearsNumber = "//label[contains(text(),'16+ שנים')]";
+		}
+		return drivingYearsNumber;
+	}
+
+	// Screen 1.5 mortgageCar
+	public String mortgageCar(String isMortgageCar) {
+		isMortgageCar = VarClass.mortgageCar;
+		if (isMortgageCar.contentEquals("false")) {
+			return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[5]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
+		}
+		return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[5]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
+	}
+
+	// Screen 1.6 yearsOfInsurance
+	public String yearsOfInsurance(String yearsOfInsurance) {
+		yearsOfInsurance = VarClass.yearsOfInsurance;
+		if (yearsOfInsurance.contentEquals("false")) {
+			return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[6]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
+		}
+		return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[6]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
+	}
+
+	// Screen 1.7 claimsIn3Years
+	public String claimsIn3Years(String claimsIn3Years) {
+		claimsIn3Years = VarClass.claimsIn3Years;
+		if (claimsIn3Years.contentEquals("false")) {
+			return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[6]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
+		}
+		return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[7]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
+	}
+
+	// Screen 1.8 howManyClaims
+	public String howManyClaims(String howManyClaims) {
+		howManyClaims = VarClass.howManyClaims;
+
+		if (howManyClaims.contentEquals("0")) {
+			return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-content-vertical-options-view/ul/li[1]/label";
+		}
+		if (howManyClaims.contentEquals("1")) {
+			return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-content-vertical-options-view/ul/li[2]/label";
+		}
+		return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-content-vertical-options-view/ul/li[3]/label";
+	}
+
+	// Screen 1.9 Restriction in 3 years No restrictions:
+	public String restrictions(String restrictions) {
+		restrictions = VarClass.restrictions;
+		if (restrictions.contentEquals("true")) {
+			return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[9]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
+		}
+		// retrun false to avoid red path.
+		return "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[9]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
+	}
+
+	// Screen 3.1 genderPolicyOwner:
+	public String genderPolicyOwner(String genderPolicyOwner) {
+		genderPolicyOwner = VarClass.genderPolicyOwner;
+		if (genderPolicyOwner.contentEquals("male")) {
+			return "//select[@id='step-1-gender-3']//option[contains(text(),'זכר')]";
+		}
+		// return female as defulat.
+		return "//select[@id='step-1-gender-3']//option[contains(text(),'נקבה')]";
+	}
 
 //	@Test(priority = 1 , dependsOnGroups={"varClass.defineVariables"})
 	@Test(priority = 12)
@@ -185,66 +214,67 @@ public class sanityAllOptions{
 			// Screen1.1: Start insurance date.
 			VarClass.wait = new WebDriverWait(VarClass.driver, VarClass.waitForElement);
 			// VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-2")));
-			// Anypicker needs 2 seconds lock user choice.
-
-//			 ScreenShot
+			// ScreenShot:
 			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
-//			 Now copy .jpeg to screenShotPath
+			// Now copy .jpeg to screenShotPath
 			FileUtils.copyFile(scrFile, new File(VarClass.screenShotPath + VarClass.filename + ".jpeg"));
-			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
-			// VarClass.driver.findElementByXPath("/html/body/app-root/accessibility-menu/div/button[2]").click();
-			// TimeUnit.SECONDS.sleep(10);
-			js.executeScript("window.pickerInstance.showOrHidePicker()");
-			js.executeScript("window.pickerInstance.setSelectedDate(new Date(" + startDateYear + "," + startDateMonth
-					+ "," + startDateDay + ", 0, 0, 0, 0))");
-			TimeUnit.SECONDS.sleep(1);
-			js.executeScript("window.pickerInstance.showOrHidePicker()");
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			JavascriptExecutor js2 = (JavascriptExecutor) VarClass.driver;
-			js2.executeScript("$(\".accessibility-menu\").show();");
+			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").clear();
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			// This is the original:
-			// $(".accessibility-menu").show();
-			VarClass.driver.findElement(By.xpath("//aw-wizard-step[1]//*[contains(@class,'orange')]")).click();
-			// VarClass.driver.findElementByXPath("//*[@id=\"ap-component-selector-1\"]").click();
+			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").sendKeys(VarClass.startInsuranceDate);
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()}, 000)");
+			VarClass.driver.findElementByXPath(
+					"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[1]/div/app-insurance-start-date/div[2]")
+					.click();
+			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
+			// js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()},
+			// 000)");
+			VarClass.driver.findElementByXPath("/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[1]/button")
+					.click();
 			// Screen1.2: How many drivers.
 			VarClass.wait.until(
-					ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[contains(text(),'ללא הגבלה')]")));
+					ExpectedConditions.visibilityOfElementLocated(By.xpath(numberOfDrivers(VarClass.numberOfDrivers))));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath("//label[contains(text(),'ללא הגבלה')]").click();
-			// VarClass.driver.findElementByXPath(numberOfDrivers).click();
+			VarClass.driver.findElementByXPath(numberOfDrivers(VarClass.numberOfDrivers)).click();
+			// TODO: Remove depandcy with xpath
 			// Screen1.3: Youngest driver.
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-0")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//*[@id=\"ap-component-selector-0\"]").click();
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//*[contains(@class,'orange')]").click();
-			// Screen1.4: licenseOfYoungestDriver.
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q4-radio-1")));
+			// Screen1.4: licenseOfYoungestDriver.;
+			VarClass.wait
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(driverYears(VarClass.drivingYears))));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath("//label[contains(text(),'10-15 שנים')]").click();
+			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
+			VarClass.driver.findElementByXPath(driverYears(VarClass.drivingYears)).click();
 			// Screen1.5: Mortgaged Vehicle.
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q5-0-radio-1")));
+			VarClass.wait
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mortgageCar(VarClass.mortgageCar))));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath(mortgagedCar).click();
+			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
+			VarClass.driver.findElementByXPath(mortgageCar(VarClass.mortgageCar)).click();
 			// Screen1.6: 3 years insurance.
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q6-0-radio-1")));
+			// VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q6-0-radio-2")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath(threeYearsInsurance).click();
+			VarClass.driver.findElementByXPath(yearsOfInsurance(VarClass.yearsOfInsurance)).click();
 			// Screen1.7: Claims in 3 years.
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q7-0-radio-1")));
+			JavascriptExecutor jse = (JavascriptExecutor) VarClass.driver;
+			jse.executeScript("document.getElementById('step-0-q7-0-radio-2').focus();");
+			// VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q7-0-radio-2")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath(claimsIn3Years).click();
+			VarClass.driver.findElementByXPath(claimsIn3Years(VarClass.claimsIn3Years)).click();
 			// Screen1.8 how many claims in 3 years.
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q7.1-radio-2")));
+			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("app-offer")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath(howManyClaims).click();
+			VarClass.driver.findElementByXPath(howManyClaims(VarClass.howManyClaims)).click();
 			// Screen1.9 Restrictions in 3 years
-			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q7.2-0-radio-1")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath(restrictions).click();
+			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("app-offer")));
+			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
+			VarClass.driver.findElementByXPath(restrictions(VarClass.restrictions)).click();
+			// Print time of function (instant now).
 			Instant end = Instant.now();
 			System.out.println("Method initialOfferQuestions took: " + Duration.between(start, end));
 		} catch (Exception e) {
@@ -253,18 +283,6 @@ public class sanityAllOptions{
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-
-	
-
-	
-	
-	
 	// @Test(enabled=false)
 	@Test(priority = 20)
 	public void callMeWizard1() throws Exception {
@@ -322,7 +340,7 @@ public class sanityAllOptions{
 					By.cssSelector("body > app-root > primary-bid > div > div.bid-content > a.link-procceed")));
 			System.out.println("Count of links on the page: " + VarClass.driver.findElements(By.tagName("a")).size());
 			System.out.println(
-					"מספר רכב: " + VarClass.driver.findElementByXPath("//*[@id=\"carDetilas\"]/span[2]").getText());
+					"מספר רכב: " + VarClass.driver.findElementByXPath("//*[@id=\"carDetilas\"]/span[3]").getText());
 			System.out.println("מחיר הצעה ראשונית: " + VarClass.driver
 					.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/div[1]/div[1]/span").getText());
 			System.out.println("תאריך תחילת ביטוח: " + VarClass.driver
@@ -400,9 +418,7 @@ public class sanityAllOptions{
 	public void finalOfferQuestions() throws Exception {
 		// FINAL OFFER SCREENS QUESTIONS.
 		try {
-
 			// Screen2.1: Privacy details of policy owner.
-
 			this.VarClass.wait
 					.until(ExpectedConditions.visibilityOfElementLocated(By.id("label-for-step-1-birthDate-4")));
 			TimeUnit.SECONDS.sleep(1);
@@ -416,33 +432,18 @@ public class sanityAllOptions{
 					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[4]/question-wrapper/div/div/combo-box/div/select")
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			// Pick female:
-			VarClass.driver.findElementByXPath("//select[@id='step-1-gender-3']//option[contains(text(),'נקבה')]")
-					.click();
+			VarClass.driver.findElementByXPath(genderPolicyOwner(VarClass.genderPolicyOwner)).click();
 			VarClass.driver.findElementByXPath(
 					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/ul/li[4]/question-wrapper/div/div/combo-box/div/select")
 					.click();
-			// birthDate
-
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			// stepTwoBirthPicker
-			VarClass.driver.findElementByXPath("//*[@id=\"step-1-birthDate-4\"]").click();
+			// birthdate:
+			VarClass.driver.findElementByXPath("//*[@id=\"step-1-birthDate-4\"]").sendKeys(VarClass.insuredBirthDate);
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-
-			// JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
-//			js.executeScript("window.stepTwoBirthPicker.setSelectedDate(new Date(" + this.VarClass.insuredBirthDate
-//					+ ", 1, 0, 0, 0, 0, 0))");
-			TimeUnit.SECONDS.sleep(1);
-			// VarClass.driver.findElementByXPath("//*[@id=\"step-2-birthDate-3\"]").click();
-			VarClass.driver.findElementByXPath("//*[@id=\"ap-button-set\"]").click();
-			// licenseIssueYear
-			TimeUnit.SECONDS.sleep(2);
-//			js.executeScript("window.stepTwoLicensePicker.setSelectedDate(new Date("
-//					+ this.VarClass.insuredLicenseIssueYear + ", 6, 14, 0, 0, 0, 0))");
-			VarClass.driver.findElementByXPath("//*[@id=\"label-for-step-1-licenseIssueYear-5\"]").click();
-			TimeUnit.SECONDS.sleep(2);
-			VarClass.driver.findElementByXPath("//*[@id=\"ap-button-set\"]").click();
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
+			// license year:
+			VarClass.driver.findElementByXPath("//*[@id=\"step-1-licenseIssueYear-5\"]")
+					.sendKeys(VarClass.insuredLicenseIssueYear);
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 			VarClass.driver
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/div/button[1]")
@@ -473,8 +474,9 @@ public class sanityAllOptions{
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[2]/div/div/button[1]")
 					.click();
+
 			// Screen2.3: 3 questions for driver and policy owner.
-			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-3-q-0-radio-1")));
+			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("accessibility-menu")));
 			TimeUnit.SECONDS.sleep(1);
 			// All No:
 			VarClass.driver.findElementByXPath(
@@ -503,8 +505,80 @@ public class sanityAllOptions{
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[3]/div/div/button[1]")
 					.click();
+
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
+
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
+			System.out.println(VarClass.driver
+					.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")
+					.getText());
+
+			// if(VarClass.driver.findElementByXPath("/html/body/app-root/external-app-offer/wizard-process-bar/div/span").getText().equals("
+			// 4 מתוך 6 ") )
+
+			// question for additional driver:
+			if (VarClass.driver
+					.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")
+					.getText().equals("פרטים אישיים של הנהג הנוסף")) {
+				// Screen2.1: Privacy details of policy owner.
+				this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(
+						By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")));
+				TimeUnit.SECONDS.sleep(1);
+				VarClass.driver.findElementByXPath("//*[@id=\"step-5-firstName-0\"]")
+						.sendKeys(this.VarClass.driver1Name);
+				VarClass.driver.findElementByXPath("//*[@id=\"step-5-lastName-1\"]")
+						.sendKeys(this.VarClass.driver1LastName);
+				VarClass.driver.findElementByXPath("//*[@id=\"step-5-personalId-2\"]")
+						.sendKeys(this.VarClass.driver1Id);
+				// birthdate:
+				VarClass.driver.findElementByXPath("//*[@id=\"step-5-birthDate-3\"]")
+						.sendKeys(VarClass.driver1BirthDate);
+				TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+				// license year:
+				VarClass.driver.findElementByXPath("//*[@id=\"step-5-licenseIssueYear-4\"]")
+						.sendKeys(VarClass.driver1LicenseIssueYear);
+				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
+				VarClass.driver.findElementByXPath(
+						"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/div/button[1]")
+						.click();
+
+				// End if additional driver1.
+			}
+
+			// question for additional 2second driver:
+			if (Integer.parseInt(VarClass.numberOfDrivers) == 3) {
+				VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(
+						By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/h1")));
+				TimeUnit.SECONDS.sleep(1);
+				if (VarClass.driver
+						.findElementByXPath(
+								"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/h1")
+						.getText().equals("פרטים אישיים של הנהג הנוסף השני")) {
+					// Screen2.1: Privacy details of policy owner.
+
+					VarClass.driver.findElementByXPath("//*[@id=\"step-10-firstName-0\"]")
+							.sendKeys(this.VarClass.driver2Name);
+					VarClass.driver.findElementByXPath("//*[@id=\"step-10-lastName-1\"]")
+							.sendKeys(this.VarClass.driver2LastName);
+					VarClass.driver.findElementByXPath("//*[@id=\"step-10-personalId-2\"]")
+							.sendKeys(this.VarClass.driver2Id);
+					// birthdate:
+					VarClass.driver.findElementByXPath("//*[@id=\"step-10-birthDate-3\"]")
+							.sendKeys(VarClass.driver2BirthDate);
+					TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+					// license year:
+					VarClass.driver.findElementByXPath("//*[@id=\"step-10-licenseIssueYear-4\"]")
+							.sendKeys(VarClass.driver2LicenseIssueYear);
+					TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
+					VarClass.driver.findElementByXPath(
+							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/div/button[1]")
+							.click();
+					// End if additional driver2.
+				}
+			}
+
 			// Screen2.4: questions for criminal record and policy refuse.
-			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-6-q-0-radio-1")));
+			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("accessibility-menu")));
 			TimeUnit.SECONDS.sleep(1);
 			// All YES:
 			VarClass.driver.findElementByXPath(
@@ -550,76 +624,6 @@ public class sanityAllOptions{
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//*[@id=\"modal-general-ext\"]/div[1]/div/div[1]/button/img").click();
-//			VarClass.driver.findElementByXPath(
-//					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[9]/div/ul/li[2]/question-wrapper/div/div/plain-text/p/span")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver.findElementByXPath("//*[@id=\"modal-general-ext\"]/div[1]/div/div[1]/button/img").click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-
-//			// NOW RETURN ALL STEPS IN FINAL OFFER:
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[9]/div/div/button[2]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/div/button[2]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[4]/div/div/button[2]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[3]/div/div/button[2]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[2]/div/div/button[2]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/div/button[2]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			// driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/a").click();
-//			VarClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/a[2]").click();
-//			// NOW FORWARD TO FINAL OFFER:
-//			// Policy owner.
-//			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-1-q-0-radio-1")));
-//			// Policy owner screen needs 2 seconds to load (after element is visible).
-//			TimeUnit.SECONDS.sleep(2);
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[1]/div/div/button[1]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[2]/div/div/button[1]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[3]/div/div/button[1]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[4]/div/div/button[1]")
-//					.click();
-//			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver
-//					.findElementByXPath(
-//							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/div/button[1]")
-//					.click();
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 			VarClass.driver
 					.findElementByXPath(
@@ -822,7 +826,6 @@ public class sanityAllOptions{
 	@Test(priority = 85)
 	public void returnSteps() throws Exception {
 		try {
-
 			VarClass.driver
 					.findElementByXPath("//div[@class='account']//button[@class='btn-empty'][contains(text(),'חזרה')]")
 					.click();
@@ -834,6 +837,15 @@ public class sanityAllOptions{
 			VarClass.driver.findElementByXPath("//aw-wizard-step[8]//div[1]//div[1]//button[2]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[7]//div[1]//div[1]//button[2]").click();
+
+			if (Integer.parseInt(VarClass.numberOfDrivers) == 3) {
+				TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+				VarClass.driver.findElementByXPath("//aw-wizard-step[6]//div[1]//div[1]//button[2]").click();
+				TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+				VarClass.driver.findElementByXPath("//aw-wizard-step[5]//div[1]//div[1]//button[2]").click();
+
+			}
+
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//div[1]//div[1]//button[2]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
@@ -901,8 +913,10 @@ public class sanityAllOptions{
 			(new Actions(VarClass.driver)).dragAndDrop(element, target).perform();
 			// screen4
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			element = VarClass.driver.findElement(By.xpath("//label[contains(text(),'10-15 שנים')]"));
-			target = VarClass.driver.findElement(By.xpath("//button[@class='btn-toggle-accessibility-menu']//img"));
+
+			element = VarClass.driver.findElement(By.xpath(
+					"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[4]/div/app-step-content-vertical-options-view/ul/li[5]/label"));
+			target = VarClass.driver.findElement(By.className("accessibility-menu"));
 			(new Actions(VarClass.driver)).dragAndDrop(element, target).perform();
 
 			// screen3
@@ -927,47 +941,36 @@ public class sanityAllOptions{
 		try {
 			// move to screen2
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver
-					.findElementByXPath(
-							"/html[1]/body[1]/app-root[1]/app-offer[1]/aw-wizard[1]/div[1]/aw-wizard-step[1]/button[1]")
-					.click();
+			VarClass.driver.findElementByXPath("//aw-wizard-step[1]//button[1]").click();
 			// move to screen3
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-
-			VarClass.driver.findElementByXPath(
-					"/html[1]/body[1]/app-root[1]/app-offer[1]/aw-wizard[1]/div[1]/aw-wizard-step[2]/div[1]/app-step-content-vertical-options-view[1]/ul[1]/li[4]/label[1]")
-					.click();
+			VarClass.driver.findElementByXPath("//aw-wizard-step[2]//button[1]").click();
 			// move to screen4
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//button[2]").click();
 			// move to screen5
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath("//label[contains(text(),'10-15 שנים')]").click();
+			VarClass.driver
+					.findElementByXPath(
+							"/html[1]/body[1]/app-root[1]/app-offer[1]/aw-wizard[1]/div[1]/aw-wizard-step[4]/button[1]")
+					.click();
 			// move to screen6
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath(
-					"//aw-wizard-step[5]//div[1]//app-step-content-horizontal-options-view[1]//ul[1]//li[2]//label[1]//span[1]")
-					.click();
+			VarClass.driver.findElementByXPath("//aw-wizard-step[5]//button[1]").click();
 			// move to screen7
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath(
-					"//aw-wizard-step[6]//div[1]//app-step-content-horizontal-options-view[1]//ul[1]//li[2]//label[1]//span[1]")
-					.click();
+			VarClass.driver.findElementByXPath("//aw-wizard-step[6]//button[1]").click();
 			// move to screen8
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath(
-					"//aw-wizard-step[7]//div[1]//app-step-content-horizontal-options-view[1]//ul[1]//li[2]//label[1]//span[1]")
-					.click();
+			VarClass.driver.findElementByXPath("//aw-wizard-step[7]//button[1]").click();
 			// move to screen9
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath(
-					"//aw-wizard-step[8]//div[1]//app-step-content-vertical-options-view[1]//ul[1]//li[2]//label[1]")
-					.click();
-			// move to finalOfferScreen
+			VarClass.driver.findElementByXPath("//aw-wizard-step[8]//button[1]").click();
+			// move to firstOfferScreen
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath(
-					"//aw-wizard-step[9]//div[1]//app-step-content-horizontal-options-view[1]//ul[1]//li[1]//label[1]//span[1]")
-					.click();
+			VarClass.driver.findElementByXPath("//aw-wizard-step[9]//button[1]").click();
+
+			// TODO function check if phone number == wizardPhone0
 			TimeUnit.SECONDS.sleep(10);
 			// move to screen2.1
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
@@ -975,12 +978,23 @@ public class sanityAllOptions{
 			// move to screen2.2
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[1]//div[1]//div[1]//button[1]").click();
-			// move to screen2.3
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath("//aw-wizard-step[2]//div[1]//div[1]//button[1]").click();
-			// screen2.3
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//div[1]//div[1]//button[1]").click();
+			if (Integer.parseInt(VarClass.numberOfDrivers) == 3) {
+				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
+				VarClass.driver.findElementByXPath("//aw-wizard-step[5]//div[1]//div[1]//button[1]").click();
+
+				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
+				VarClass.driver.findElementByXPath("//aw-wizard-step[6]//div[1]//div[1]//button[1]").click();
+
+			} else {
+				// move to screen2.3
+				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
+				VarClass.driver.findElementByXPath("//aw-wizard-step[2]//div[1]//div[1]//button[1]").click();
+				// screen2.3
+				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
+				VarClass.driver.findElementByXPath("//aw-wizard-step[3]//div[1]//div[1]//button[1]").click();
+
+			}
+
 			// screen2.4
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[7]//div[1]//div[1]//button[1]").click();
@@ -1008,8 +1022,6 @@ public class sanityAllOptions{
 			e.printStackTrace();
 			throw new Exception("Failed in moveing FORWARD");
 		}
-
-		// TODO Swipe back and forward in first offer.
 	}
 
 	@Test(priority = 90)
