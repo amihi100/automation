@@ -8,9 +8,16 @@
         <methods>
           <include name="forwardSteps"/>
           <include name="returnSteps"/>
+          <include name="callMeWizard1"/>
+          <include name="initialOfferQuestions"/>
+          <include name="covers"/>
           <include name="thankYouPage"/>
+          <include name="initialOfferScreen"/>
+          <include name="finalOfferScreen"/>
           <include name="registeredAccount"/>
           <include name="iframeCreditGuard"/>
+          <include name="payments"/>
+          <include name="finalOfferQuestions"/>
         </methods>
       </class> <!-- TestNG.sanityAllOptionsTest -->
     </classes>

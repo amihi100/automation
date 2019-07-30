@@ -133,7 +133,6 @@ public class sanityAllOptionsTest {
 		if (Integer.parseInt(VarClass.drivingYears) == 0) {
 			drivingYearsNumber = "//label[contains(text(),'0 שנים')]";
 		}
-
 		else if (Integer.parseInt(VarClass.drivingYears) == 1) {
 			drivingYearsNumber = "//label[contains(text(),'שנה אחת')]";
 		} else if (Integer.parseInt(VarClass.drivingYears) > 1 && Integer.parseInt(VarClass.drivingYears) < 10) {
@@ -236,7 +235,6 @@ public class sanityAllOptionsTest {
 					ExpectedConditions.visibilityOfElementLocated(By.xpath(numberOfDrivers(VarClass.numberOfDrivers))));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath(numberOfDrivers(VarClass.numberOfDrivers)).click();
-			// TODO: Remove depandcy with xpath
 			// Screen1.3: Youngest driver.
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-0")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
@@ -392,7 +390,10 @@ public class sanityAllOptionsTest {
 			// Terms of condition:
 			VarClass.driver.findElementByXPath("//a[contains(text(),'ומדיניות פרטיות')]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			VarClass.driver.findElementByXPath("//modal-dialog[15]//img[1]").click();
+
+			VarClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
+					.click();
+
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			// Privacy policy:
 
@@ -402,7 +403,8 @@ public class sanityAllOptionsTest {
 
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 
-			VarClass.driver.findElementByXPath("//modal-dialog[15]//button[1]").click();
+			VarClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
+					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
@@ -577,6 +579,9 @@ public class sanityAllOptionsTest {
 				}
 			}
 
+			
+			
+			
 			// Screen2.4: questions for criminal record and policy refuse.
 			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("accessibility-menu")));
 			TimeUnit.SECONDS.sleep(1);
@@ -595,6 +600,20 @@ public class sanityAllOptionsTest {
 			VarClass.driver.findElementByXPath(
 					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[7]/div/ul/li[2]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]")
 					.click();
+			
+			
+			
+			
+			//TODO:
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 			VarClass.driver
 					.findElementByXPath(
@@ -826,35 +845,49 @@ public class sanityAllOptionsTest {
 	@Test(priority = 85)
 	public void returnSteps() throws Exception {
 		try {
+
+			// return from payments to covers:
 			VarClass.driver
 					.findElementByXPath("//div[@class='account']//button[@class='btn-empty'][contains(text(),'חזרה')]")
 					.click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			// return from covers to final proposal:
 			VarClass.driver.findElementByXPath("//offer-payment[@class='offer-payment']//button[2]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			// return from final proposal to terms and conditions screen:
 			VarClass.driver.findElementByXPath("//a[@class='link-back']").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+			// return from terms and conditions to criminal record and refusal questions:
 			VarClass.driver.findElementByXPath("//aw-wizard-step[8]//div[1]//div[1]//button[2]").click();
+			// return from criminal record and refusal to 3 questions screen:
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[7]//div[1]//div[1]//button[2]").click();
-
+			// 3 drivers return steps:
 			if (Integer.parseInt(VarClass.numberOfDrivers) == 3) {
 				TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 				VarClass.driver.findElementByXPath("//aw-wizard-step[6]//div[1]//div[1]//button[2]").click();
 				TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 				VarClass.driver.findElementByXPath("//aw-wizard-step[5]//div[1]//div[1]//button[2]").click();
-
 			}
-
+			// 2 drivers return steps:
+			if (Integer.parseInt(VarClass.numberOfDrivers) == 2) {
+				TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+				VarClass.driver.findElementByXPath("//aw-wizard-step[5]//div[1]//div[1]//button[2]").click();
+			}
+			// 1 or unlimited drivers return steps:
+			// return from 3 questions screen to policy contact details:
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//div[1]//div[1]//button[2]").click();
+			// return from policy contact details to policy owner details:
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[2]//div[1]//div[1]//button[2]").click();
+			// return from policy owner details to first offer screen:
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[1]//div[1]//div[1]//button[2]").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//a[@class='link-back']").click();
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
+
 			// return back in first offer:
 			// screen 9
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
@@ -969,7 +1002,6 @@ public class sanityAllOptionsTest {
 			// move to firstOfferScreen
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[9]//button[1]").click();
-
 			// TODO function check if phone number == wizardPhone0
 			TimeUnit.SECONDS.sleep(10);
 			// move to screen2.1
@@ -978,24 +1010,24 @@ public class sanityAllOptionsTest {
 			// move to screen2.2
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[1]//div[1]//div[1]//button[1]").click();
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
+			VarClass.driver.findElementByXPath("//aw-wizard-step[2]//div[1]//div[1]//button[1]").click();
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
+			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//div[1]//div[1]//button[1]").click();
+
+			// 3dirvers mode:
 			if (Integer.parseInt(VarClass.numberOfDrivers) == 3) {
+
 				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 				VarClass.driver.findElementByXPath("//aw-wizard-step[5]//div[1]//div[1]//button[1]").click();
 
 				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 				VarClass.driver.findElementByXPath("//aw-wizard-step[6]//div[1]//div[1]//button[1]").click();
-
-			} else {
-				// move to screen2.3
-				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-				VarClass.driver.findElementByXPath("//aw-wizard-step[2]//div[1]//div[1]//button[1]").click();
-				// screen2.3
-				TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-				VarClass.driver.findElementByXPath("//aw-wizard-step[3]//div[1]//div[1]//button[1]").click();
-
 			}
+			// 1 or 2 drivers mode:
+			else {
 
-			// screen2.4
+			} // screen2.4
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[7]//div[1]//div[1]//button[1]").click();
 

@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test-class Suite" parallel="tests" thread-count="8">
+<suite name="Test-class Suite" parallel="tests" thread-count="5">
     <test name="Test-class test 1">
-        <parameter name="env" value="dev" />
+        <parameter name="env" value="0years" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
     <test name="Test-class test 2">
-        <parameter name="env" value="dev" />
+        <parameter name="env" value="1years" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
     <test name="Test-class test 3">
-        <parameter name="env" value="dev" />
+        <parameter name="env" value="howManyClaims" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
         <test name="Test-class test 4">
-        <parameter name="env" value="dev" />
+        <parameter name="env" value="restrictions" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
         <test name="Test-class test 5">
-        <parameter name="env" value="dev" />
+        <parameter name="env" value="yearsOfInsurance" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
-        <test name="Test-class test 6">
+    
+    
+    <!-- 
+    
+    
+            <test name="Test-class test 6">
         <parameter name="env" value="dev" />
         <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
+            <class name="TestNG.sanityAllOptions" />
         </classes>
     </test>
         <test name="Test-class test 7">
         <parameter name="env" value="dev" />
         <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
+            <class name="TestNG.sanityAllOptions" />
         </classes>
     </test>
             <test name="Test-class test 8">
         <parameter name="env" value="dev" />
         <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
+            <class name="TestNG.sanityAllOptions" />
         </classes>
     </test>
     
     
+     -->
     
 </suite>

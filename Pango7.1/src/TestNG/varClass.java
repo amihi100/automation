@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class varClass {
-	public String environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers, drivingYears,
+	public String redPath, environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers, drivingYears,
 			mortgageCar, yearsOfInsurance, claimsIn3Years, howManyClaims, restrictions, screenShotPath, filename,
 			insuredName, insuredLastName, insuredIdDriver, genderPolicyOwner, insuredBirthDate, insuredLicenseIssueYear,
 			city, street, houseNumber, email, cellphone, wizardPhone0, wizardPhone1, driver1Name, driver1LastName,
@@ -29,7 +29,6 @@ public class varClass {
 	public ChromeOptions options;
 	ChromeDriver driver;
 	WebDriverWait wait;
-
 	public void setWaitClass(WebDriverWait wait) {
 		wait = wait;
 	}
@@ -37,15 +36,40 @@ public class varClass {
 	// @Test(priority = 0, groups={"varClass.defineVariables"})
 	public void defineVariables(String env) throws Exception {
 		try {
+			
+			Properties varProps = new Properties();
 			windowDimension = new Dimension(372, 900);
-
 			String dir = System.getProperty("user.dir");
 			// System.out.println("current dir = " + dir);
 			String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 			System.out.println("Root path:" + rootPath);
-			String filePath = MessageFormat.format("{0}\\config.{1}.xml", dir, env);
-			Properties varProps = new Properties();
+			
+			
+			
+			
+			//String filePath = MessageFormat.format("{0}\\config.{1}.xml", dir, env);
+
+			String filePath = MessageFormat.format("{0}\\configXml\\config.{1}.xml", dir, env);
 			varProps.loadFromXML(new FileInputStream(filePath));
+
+			redPath = varProps.getProperty("redPath");
+			System.out.println("redpath: "+ varProps.getProperty("redPath"));
+			
+			
+//
+//			System.out.println(1);
+//			System.out.println("redpath: "+ varProps.getProperty("redPath"));
+//			
+//			if(varProps.getProperty("redPath").contentEquals("true")) {
+//				System.out.println(2);
+//				filePath = MessageFormat.format("{0}\\redPath\\config.{1}.xml", dir, env);
+//				System.out.println("filePath: "+ filePath);
+//				System.out.println("redpath: "+ redPath);
+//			}
+//			else {
+//				filePath = MessageFormat.format("{0}\\config.{1}.xml", dir, env);
+//			}
+////			
 
 			carNumber = varProps.getProperty("carNumber");// "5901079"; // Menora car#: 59XXX79.//5901079 //2432773
 			// environmentURL =
@@ -132,6 +156,8 @@ public class varClass {
 
 			// C:\Users\amichaito\Desktop\chromedriver_win32\chromedriver.exe
 
+			
+			//TODO change this path if running with another machine.
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\amichaito\\Desktop\\chromedriver2.46\\chromedriver.exe");
 

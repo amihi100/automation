@@ -3,28 +3,23 @@
 
 	
 	<suite name="Test-class Suite" parallel="tests" thread-count="2">
-	
-	
-	
-	
+		
 	
   <parameter name = "env" value="dev"/> 
 	<test name="Automated test - End2End">
 		<classes>
 			<!-- <class name="TestNG.varClass" /> -->
-			<class name="TestNG.sanityAllOptions" />
+			<class name="TestNG.sanityAllOptionsTest" />
 		</classes>
 	</test>
 	
 	  <test name="Test-class test 3">
         <parameter name="env" value="stage" />
         <classes>
-            <class name="TestNG.sanityAllOptions" />
+            <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
-	
-	
-	
+
 </suite>
 <!-- <suite name="Pango App Suite" parallel="false" preserve-order="true"> 
 	<test name="Regression Dev - End2End"> <classes> <class name="TestNG.varClass" 
