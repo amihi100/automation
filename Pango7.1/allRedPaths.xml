@@ -2,31 +2,31 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test-class Suite" parallel="tests" thread-count="5">
     <test name="Test-class test 1">
-        <parameter name="env" value="0years" />
+        <parameter name="env" value="red0years" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
     <test name="Test-class test 2">
-        <parameter name="env" value="1years" />
+        <parameter name="env" value="red1years" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
     <test name="Test-class test 3">
-        <parameter name="env" value="howManyClaims" />
+        <parameter name="env" value="redHowManyClaims" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
         <test name="Test-class test 4">
-        <parameter name="env" value="restrictions" />
+        <parameter name="env" value="redRestrictions" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
         <test name="Test-class test 5">
-        <parameter name="env" value="yearsOfInsurance" />
+        <parameter name="env" value="redYearsOfInsurance" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
