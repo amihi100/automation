@@ -12,8 +12,23 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import org.testng.ITestContext;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 public class varClass {
+
+	
 	public String redPath, environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers, drivingYears,
 			mortgageCar, yearsOfInsurance, claimsIn3Years, howManyClaims, restrictions, screenShotPath, filename,
 			insuredName, insuredLastName, insuredIdDriver, genderPolicyOwner, insuredBirthDate, insuredLicenseIssueYear,
@@ -28,34 +43,51 @@ public class varClass {
 	public Dimension windowDimension;
 	public ChromeOptions options;
 	ChromeDriver driver;
+	
+	  
+
+	//TODO: WHAT IS WAIT?
+	
 	WebDriverWait wait;
 	public void setWaitClass(WebDriverWait wait) {
 		wait = wait;
 	}
+	
+//    @Parameters(value="env")
+//    @Test
+//    public void t1(String desc) {
+//        System.out.println("t1: " + desc);
+//    }
 
+	
+	
 	// @Test(priority = 0, groups={"varClass.defineVariables"})
-	public void defineVariables(String env) throws Exception {
+	@Parameters({"xml", "env"})
+	public void defineVariables(String xml) throws Exception {
+    	
 		try {
 			
 			Properties varProps = new Properties();
 			windowDimension = new Dimension(372, 900);
 			String dir = System.getProperty("user.dir");
-			// System.out.println("current dir = " + dir);
+			System.out.println("current dir = " + dir);
 			String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 			System.out.println("Root path:" + rootPath);
 			
-			
-			
-			
-			//String filePath = MessageFormat.format("{0}\\config.{1}.xml", dir, env);
 
-			String filePath = MessageFormat.format("{0}\\configXml\\config.{1}.xml", dir, env);
+		
+		
+			//TODO:
+			//David:
+			// 	String filePath = MessageFormat.format("{0}\\configXml\\{1}\\config.{2}.xml", dir, xml);
+			String filePath = MessageFormat.format("{0}\\configXml\\config.{1}.xml", dir, xml);
+			System.out.println("xml file path: "+ filePath);
+			
 			varProps.loadFromXML(new FileInputStream(filePath));
-
 			redPath = varProps.getProperty("redPath");
 			System.out.println("redpath: "+ varProps.getProperty("redPath"));
 			
-			
+		
 //
 //			System.out.println(1);
 //			System.out.println("redpath: "+ varProps.getProperty("redPath"));
@@ -88,6 +120,8 @@ public class varClass {
 
 			// environmentURL = "https://" + varProps.getProperty("environment")+
 			// ".pango-ins.co.il/api/test/url?ln=" + carNumber + "&ui=" + UUID.randomUUID();
+
+		    
 			environment = varProps.getProperty("environment");
 
 			// System.out.println("First URL: "+ environment);

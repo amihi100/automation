@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test-class Suite" parallel="tests" thread-count="5">
-    <test name="Test-class test 1">
+    <test name="Test-class test 1 red0years">
         <parameter name="env" value="red0years" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-    <test name="Test-class test 2">
-        <parameter name="env" value="red1years" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-    <test name="Test-class test 3">
         <parameter name="env" value="redHowManyClaims" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
-        <test name="Test-class test 4">
+    <test name="Test-class test 2 red1years">
+        <parameter name="env" value="red1years" />
+        <classes>
+            <class name="TestNG.sanityAllOptionsTest" />
+        </classes>
+    </test>
+    <test name="Test-class test 3 redHowManyClaims">
+        <parameter name="env" value="redHowManyClaims" />
+        
+        <classes>
+            <class name="TestNG.sanityAllOptionsTest" />
+        </classes>
+    </test>
+        <test name="Test-class test 4 redRestrictions">
         <parameter name="env" value="redRestrictions" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
-        <test name="Test-class test 5">
+        <test name="Test-class test 5 redYearsOfInsurance">
         <parameter name="env" value="redYearsOfInsurance" />
         <classes>
             <class name="TestNG.sanityAllOptionsTest" />
