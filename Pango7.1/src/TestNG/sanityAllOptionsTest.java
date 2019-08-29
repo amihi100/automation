@@ -599,9 +599,6 @@ public class sanityAllOptionsTest {
 					// End if additional driver2.
 				}
 			}
-
-			
-			
 			
 			// Screen2.4: questions for criminal record and policy refuse.
 			this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[7]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]")));
