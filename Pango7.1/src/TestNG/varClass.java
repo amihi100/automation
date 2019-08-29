@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.text.MessageFormat;
 import java.time.Instant;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Properties;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -193,7 +194,7 @@ public class varClass {
 			
 			//TODO change this path if running with another machine.
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\amichaito\\Desktop\\chromedriver2.46\\chromedriver.exe");
+					"C:\\Users\\amichaito\\Desktop\\chromedriver2\\chromedriver.exe");
 
 			// Define path to save screenShot of first screen (start date).
 			screenShotPath = "c:\\tmp1\\";
@@ -207,6 +208,8 @@ public class varClass {
 
 			options = new ChromeOptions();
 			options.addArguments("disable-infobars");
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));    
 			options.addArguments("--incognito");
 			driver = new ChromeDriver(options);
 

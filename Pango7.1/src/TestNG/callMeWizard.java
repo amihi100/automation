@@ -15,7 +15,7 @@ public class callMeWizard {
 	
 	// @Test(enabled=false)
 		@Test(priority = 20)
-		public void callMeWizard() throws Exception {
+		public void callMeWizard007() throws Exception {
 			try {
 
 				TimeUnit.SECONDS.sleep(7);

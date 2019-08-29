@@ -19,8 +19,8 @@
             <class name="TestNG.sanityAllOptionsTest" />
         </classes>
     </test>
-
 </suite>
+
 <!-- <suite name="Pango App Suite" parallel="false" preserve-order="true"> 
 	<test name="Regression Dev - End2End"> <classes> <class name="TestNG.varClass" 
 	/> <class name="TestNG.DevSanityAllOptions" /> </classes> </test> </suite> -->
