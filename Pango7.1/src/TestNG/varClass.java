@@ -30,12 +30,12 @@ import org.testng.annotations.Test;
 public class varClass {
 
 	
-	public String redPath, environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers, drivingYears,
+	public String redPath, environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers, youngestDriverAge, drivingYears,
 			mortgageCar, yearsOfInsurance, claimsIn3Years, howManyClaims, restrictions, screenShotPath, filename,
 			insuredName, insuredLastName, insuredIdDriver, genderPolicyOwner, insuredBirthDate, insuredLicenseIssueYear,
 			city, street, houseNumber, email, cellphone, wizardPhone0, wizardPhone1, driver1Name, driver1LastName,
 			driver1Id, driver1BirthDate, driver2Name, driver2LastName, driver2Id, driver2BirthDate,
-			driver2LicenseIssueYear, cardNumber, cardPersonalId, driver1LicenseIssueYear, cardFullName, cardMonth,
+			driver2LicenseIssueYear,criminalAndRefuse, cardNumber, cardPersonalId, driver1LicenseIssueYear, cardFullName, cardMonth,
 			cardYear, localApp, httpOrHttps;
 
 	public boolean appID;
@@ -76,11 +76,9 @@ public class varClass {
 			System.out.println("Root path:" + rootPath);
 			
 
-		
-		
 			//TODO:
 			//David:
-			// 	String filePath = MessageFormat.format("{0}\\configXml\\{1}\\config.{2}.xml", dir, xml);
+			//String filePath = MessageFormat.format("{0}\\configXml\\{1}\\config.{2}.xml", dir, xml);
 			String filePath = MessageFormat.format("{0}\\configXml\\config.{1}.xml", dir, xml);
 			System.out.println("xml file path: "+ filePath);
 			
@@ -144,6 +142,7 @@ public class varClass {
 			// Define scenario variables - First offer:
 			appID = Boolean.valueOf(varProps.getProperty("appID"));
 			startInsuranceDate = varProps.getProperty("startInsuranceDate");
+			youngestDriverAge = varProps.getProperty("youngestDriverAge");
 			numberOfDrivers = varProps.getProperty("numberOfDrivers");
 			drivingYears = varProps.getProperty("drivingYears");
 			mortgageCar = varProps.getProperty("mortgageCar");
@@ -179,12 +178,17 @@ public class varClass {
 			driver2Id = varProps.getProperty("driver2Id");
 			driver2BirthDate = varProps.getProperty("driver2BirthDate");
 			driver2LicenseIssueYear = varProps.getProperty("driver2LicenseIssueYear");
+			
+			//redPath final offer criminalAndRefuse:
+			criminalAndRefuse = varProps.getProperty("criminalAndRefuse");
+
 			// CreditGaurd details
 			cardFullName = varProps.getProperty("cardFullName");
 			cardPersonalId = varProps.getProperty("cardPersonalId");
 			cardNumber = varProps.getProperty("cardNumber");
 			cardMonth = varProps.getProperty("cardMonth");
 			cardYear = varProps.getProperty("cardYear");
+			
 			// Define path of chromedriver.exe file.
 			// System.setProperty("webdriver.chrome.driver",
 			// "C:\\Users\\amichaito\\Desktop\\Code\\Selenium\\PangoAPP\\chromedriver.exe");

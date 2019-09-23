@@ -15,10 +15,10 @@
 	<!-- Define scenario variables - FIRST offer questions: -->
 	<entry key="startInsuranceDate">0808</entry>
 	<entry key="numberOfDrivers">9</entry>
-	<entry key="youngestDriverAge">30</entry>
-	<entry key="drivingYears">10</entry>
+	<entry key="youngestDriverAge">18</entry>
+	<entry key="drivingYears">2</entry>
 	<entry key="mortgageCar">true</entry>
-	<entry key="yearsOfInsurance">false</entry>
+	<entry key="yearsOfInsurance">true</entry>
 	<entry key="claimsIn3Years">true</entry>
 	<entry key="howManyClaims">1</entry>
 	<entry key="restrictions">false</entry>
