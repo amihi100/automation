@@ -620,12 +620,16 @@ public class sanityAllOptionsTest {
 					"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[7]/div/ul/li[2]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]")
 					.click();
 			// Value for red path Scenario:
-			
-			System.out.println("here");
-			if(Integer.parseInt(VarClass.numberOfDrivers) == 1 || Integer.parseInt(VarClass.numberOfDrivers) == 2){
-				System.out.println(Integer.parseInt(VarClass.numberOfDrivers));
-				TimeUnit.SECONDS.sleep(1);
-				VarClass.driver.findElementByXPath(criminalAndRefuse(Integer.parseInt(VarClass.numberOfDrivers))).click();
+			try {
+				
+				if(Integer.parseInt(VarClass.numberOfDrivers) == 1 || Integer.parseInt(VarClass.numberOfDrivers) == 2){
+					TimeUnit.SECONDS.sleep(1);
+					VarClass.driver.findElementByXPath(criminalAndRefuse(Integer.parseInt(VarClass.numberOfDrivers))).click();
+					System.out.println("Red path of final offer!");
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("No red path of final offer");
 			}
 
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
@@ -667,7 +671,7 @@ public class sanityAllOptionsTest {
 			throw new Exception("Failed in FINAL OFFER QUESTIONS");
 		}
 	}
-
+	
 	@Test(priority = 50)
 	public void finalOfferScreen() throws Exception {
 		try {
