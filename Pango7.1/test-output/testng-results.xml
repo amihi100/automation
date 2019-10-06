@@ -2,55 +2,55 @@
 <testng-results skipped="0" failed="3" ignored="1" total="13" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Test-class Suite" duration-ms="274075" started-at="2019-09-22T15:45:16Z" finished-at="2019-09-22T15:49:50Z">
+  <suite name="Test-class Suite" duration-ms="284926" started-at="2019-10-06T08:59:10Z" finished-at="2019-10-06T09:03:55Z">
     <groups>
     </groups>
-    <test name="Automated test - End2End" duration-ms="274075" started-at="2019-09-22T15:45:16Z" finished-at="2019-09-22T15:49:50Z">
+    <test name="Automated test - End2End" duration-ms="284926" started-at="2019-10-06T08:59:10Z" finished-at="2019-10-06T09:03:55Z">
       <class name="TestNG.sanityAllOptionsTest">
-        <test-method status="PASS" signature="initialOfferQuestions()[pri:12, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferQuestions" duration-ms="20892" started-at="2019-09-22T15:45:16Z" finished-at="2019-09-22T15:45:37Z">
+        <test-method status="PASS" signature="initialOfferQuestions()[pri:12, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferQuestions" duration-ms="20427" started-at="2019-10-06T08:59:10Z" finished-at="2019-10-06T08:59:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferQuestions -->
-        <test-method status="PASS" signature="callMeWizard1()[pri:20, instance:TestNG.sanityAllOptionsTest@d737b89]" name="callMeWizard1" duration-ms="13033" started-at="2019-09-22T15:45:37Z" finished-at="2019-09-22T15:45:50Z">
+        <test-method status="PASS" signature="callMeWizard1()[pri:20, instance:TestNG.sanityAllOptionsTest@d737b89]" name="callMeWizard1" duration-ms="13004" started-at="2019-10-06T08:59:31Z" finished-at="2019-10-06T08:59:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- callMeWizard1 -->
-        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferScreen" duration-ms="20541" started-at="2019-09-22T15:45:50Z" finished-at="2019-09-22T15:46:10Z">
+        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferScreen" duration-ms="20449" started-at="2019-10-06T08:59:44Z" finished-at="2019-10-06T09:00:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferScreen -->
-        <test-method status="PASS" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferQuestions" duration-ms="38699" started-at="2019-09-22T15:46:10Z" finished-at="2019-09-22T15:46:49Z">
+        <test-method status="PASS" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferQuestions" duration-ms="46375" started-at="2019-10-06T09:00:04Z" finished-at="2019-10-06T09:00:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferQuestions -->
-        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferScreen" duration-ms="18674" started-at="2019-09-22T15:46:49Z" finished-at="2019-09-22T15:47:08Z">
+        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferScreen" duration-ms="18718" started-at="2019-10-06T09:00:50Z" finished-at="2019-10-06T09:01:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@d737b89]" name="covers" duration-ms="2525" started-at="2019-09-22T15:47:08Z" finished-at="2019-09-22T15:47:10Z">
+        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@d737b89]" name="covers" duration-ms="2538" started-at="2019-10-06T09:01:09Z" finished-at="2019-10-06T09:01:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@d737b89]" name="payments" duration-ms="17424" started-at="2019-09-22T15:47:10Z" finished-at="2019-09-22T15:47:28Z">
+        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@d737b89]" name="payments" duration-ms="17456" started-at="2019-10-06T09:01:12Z" finished-at="2019-10-06T09:01:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@d737b89]" name="returnSteps" duration-ms="34740" started-at="2019-09-22T15:47:28Z" finished-at="2019-09-22T15:48:02Z">
+        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@d737b89]" name="returnSteps" duration-ms="35779" started-at="2019-10-06T09:01:29Z" finished-at="2019-10-06T09:02:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnSteps -->
-        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@d737b89]" name="forwardSteps" duration-ms="56601" started-at="2019-09-22T15:48:02Z" finished-at="2019-09-22T15:48:59Z">
+        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@d737b89]" name="forwardSteps" duration-ms="59618" started-at="2019-10-06T09:02:05Z" finished-at="2019-10-06T09:03:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forwardSteps -->
-        <test-method status="FAIL" signature="iframeCreditGuard()[pri:90, instance:TestNG.sanityAllOptionsTest@d737b89]" name="iframeCreditGuard" duration-ms="11193" started-at="2019-09-22T15:48:59Z" finished-at="2019-09-22T15:49:10Z">
+        <test-method status="FAIL" signature="iframeCreditGuard()[pri:90, instance:TestNG.sanityAllOptionsTest@d737b89]" name="iframeCreditGuard" duration-ms="11160" started-at="2019-10-06T09:03:05Z" finished-at="2019-10-06T09:03:16Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in Iframe CreditGuard]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in Iframe CreditGuard
-at TestNG.sanityAllOptionsTest.iframeCreditGuard(sanityAllOptionsTest.java:1131)
+at TestNG.sanityAllOptionsTest.iframeCreditGuard(sanityAllOptionsTest.java:1136)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -77,14 +77,14 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iframeCreditGuard -->
-        <test-method status="FAIL" signature="thankYouPage()[pri:100, instance:TestNG.sanityAllOptionsTest@d737b89]" name="thankYouPage" duration-ms="35500" started-at="2019-09-22T15:49:10Z" finished-at="2019-09-22T15:49:46Z">
+        <test-method status="FAIL" signature="thankYouPage()[pri:100, instance:TestNG.sanityAllOptionsTest@d737b89]" name="thankYouPage" duration-ms="35345" started-at="2019-10-06T09:03:16Z" finished-at="2019-10-06T09:03:51Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed to display thank you page]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed to display thank you page
-at TestNG.sanityAllOptionsTest.thankYouPage(sanityAllOptionsTest.java:1148)
+at TestNG.sanityAllOptionsTest.thankYouPage(sanityAllOptionsTest.java:1153)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -111,14 +111,14 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thankYouPage -->
-        <test-method status="FAIL" signature="registeredAccount()[pri:110, instance:TestNG.sanityAllOptionsTest@d737b89]" name="registeredAccount" duration-ms="4026" started-at="2019-09-22T15:49:46Z" finished-at="2019-09-22T15:49:50Z">
+        <test-method status="FAIL" signature="registeredAccount()[pri:110, instance:TestNG.sanityAllOptionsTest@d737b89]" name="registeredAccount" duration-ms="4020" started-at="2019-10-06T09:03:51Z" finished-at="2019-10-06T09:03:55Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed to display thank you page]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed to display thank you page
-at TestNG.sanityAllOptionsTest.registeredAccount(sanityAllOptionsTest.java:1169)
+at TestNG.sanityAllOptionsTest.registeredAccount(sanityAllOptionsTest.java:1174)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

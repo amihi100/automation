@@ -13,9 +13,9 @@
 	<entry key="MILLISECONDS">1000</entry>
 
 	<!-- Define scenario variables - FIRST offer questions: -->
-	<entry key="startInsuranceDate">0110</entry>
-	<entry key="numberOfDrivers">2</entry>
-	<entry key="youngestDriverAge">30</entry>
+	<entry key="startInsuranceDate">0111 - This value is in sanity class!</entry>
+	<entry key="numberOfDrivers">3</entry>
+	<entry key="youngestDriverAge">31</entry>
 	<entry key="drivingYears">10</entry>
 	<entry key="mortgageCar">true</entry>
 	<entry key="yearsOfInsurance">true</entry>
@@ -46,7 +46,6 @@
 	<entry key="driver1Id">301818084</entry>
 	<entry key="driver1BirthDate">26091976</entry>
 	<entry key="driver1LicenseIssueYear">2005</entry>
-	<entry key="driver1LicenseIssueYear123">2014</entry>
 
 	<!-- Additional driver2 details: -->
 	<entry key="driver2Name">נהג נוסף2</entry>
@@ -54,7 +53,7 @@
 	<entry key="driver2Id">301737870</entry>
 	<entry key="driver2BirthDate">26091977</entry>
 	<entry key="driver2LicenseIssueYear">2004</entry>
-	<entry key="driver2LicenseIssueYear123">2013</entry>
+
 	<!-- CreditGaurd details -->
 	<entry key="cardFullName">עמיחי תורגמן</entry>
 	<entry key="cardPersonalId">890108558</entry>
@@ -62,5 +61,4 @@
 	<entry key="cardMonth">9</entry>
 	<entry key="cardYear">2020</entry>
 	<!-- EXTRA DETALIS -->
-
 </properties>

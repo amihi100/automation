@@ -230,7 +230,7 @@ public class sanityAllOptionsTest {
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").clear();
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").sendKeys("10/10");
+			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").sendKeys("10/10/2019");
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath(
 					"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[1]/div/app-insurance-start-date/div[2]")
@@ -1173,6 +1173,14 @@ public class sanityAllOptionsTest {
 			e.printStackTrace();
 			throw new Exception("Failed to display thank you page");
 		}
+		
+		
+		finally{
+			//TODO: close chrome tabs , delete cookies, preapre for new tests.
+			
+		}
 	}
+	
+
 
 }
