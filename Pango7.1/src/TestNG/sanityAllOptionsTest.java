@@ -227,10 +227,10 @@ public class sanityAllOptionsTest {
 			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
 			// Now copy .jpeg to screenShotPath
 			FileUtils.copyFile(scrFile, new File(VarClass.screenShotPath + VarClass.filename + ".jpeg"));
-			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").clear();
-			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").sendKeys("10/10/2019");
+//			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
+//			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").clear();
+//			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
+//			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").sendKeys("10/10/2019");
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath(
 					"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[1]/div/app-insurance-start-date/div[2]")
@@ -1173,14 +1173,13 @@ public class sanityAllOptionsTest {
 			e.printStackTrace();
 			throw new Exception("Failed to display thank you page");
 		}
-		
-		
 		finally{
+			//This block is executed either exception happened or not.
 			//TODO: close chrome tabs , delete cookies, preapre for new tests.
-			
+			VarClass.driver.manage().deleteAllCookies();
+		//	VarClass.driver.close();
+			System.out.println("Closed tab and deleted cookies");
 		}
 	}
 	
-
-
 }

@@ -1,75 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test-class Suite" parallel="tests" thread-count="7">
-    <test name="Test-class test 1 red0years">
-        <parameter name="xml" value="red0years" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-    <test name="Test-class test 2 red1years">
-        <parameter name="xml" value="red1years" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-    <test name="Test-class test 3 redHowManyClaims">
-        <parameter name="xml" value="redHowManyClaims" />
-        
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-        <test name="Test-class test 4 redRestrictions">
-        <parameter name="xml" value="redRestrictions" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-        <test name="Test-class test 5 redYearsOfInsurance">
-        <parameter name="xml" value="redYearsOfInsurance" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-    
-     <test name="Test-class test 6 red17years1year">
-        <parameter name="xml" value="red17years1year" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-    
-         <test name="Test-class test 7 red18years2years">
-        <parameter name="xml" value="red18years2years" />
-        <classes>
-            <class name="TestNG.sanityAllOptionsTest" />
-        </classes>
-    </test>
-    
-    <!-- 
-    
-    
-            <test name="Test-class test 6">
-        <parameter name="env" value="dev" />
-        <classes>
-            <class name="TestNG.sanityAllOptions" />
-        </classes>
-    </test>
-        <test name="Test-class test 7">
-        <parameter name="env" value="dev" />
-        <classes>
-            <class name="TestNG.sanityAllOptions" />
-        </classes>
-    </test>
-            <test name="Test-class test 8">
-        <parameter name="env" value="dev" />
-        <classes>
-            <class name="TestNG.sanityAllOptions" />
-        </classes>
-    </test>
-    
-    
-     -->
-    
+
+
+	<test name="Test-class test 1 red0years">
+		<parameter name="xml" value="red0years" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+	<test name="Test-class test 2 red1years">
+		<parameter name="xml" value="red1years" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+	<test name="Test-class test 3 redHowManyClaims">
+		<parameter name="xml" value="redHowManyClaims" />
+
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+	<test name="Test-class test 4 redRestrictions">
+		<parameter name="xml" value="redRestrictions" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+	<test name="Test-class test 5 redYearsOfInsurance">
+		<parameter name="xml" value="redYearsOfInsurance" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+
+	<test name="Test-class test 6 red17years1year">
+		<parameter name="xml" value="red17years1year" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+
+	<test name="Test-class test 7 red18years2years">
+		<parameter name="xml" value="red18years2years" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+
+	<test name="Test-class test 8 redFinalOffer1">
+		<parameter name="xml" value="redFinalOffer1" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+
+	<test name="Test-class test 9 redFinalOffer2">
+		<parameter name="xml" value="redFinalOffer2" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+	<!-- <test name="Test-class test 6"> <parameter name="env" value="dev" /> 
+		<classes> <class name="TestNG.sanityAllOptions" /> </classes> </test> <test 
+		name="Test-class test 7"> <parameter name="env" value="dev" /> <classes> 
+		<class name="TestNG.sanityAllOptions" /> </classes> </test> <test name="Test-class 
+		test 8"> <parameter name="env" value="dev" /> <classes> <class name="TestNG.sanityAllOptions" 
+		/> </classes> </test> -->
+
 </suite>

@@ -3,41 +3,62 @@
 <properties>
 
 	<!-- Settings: -->
-		<!-- value: dev stage app -->
+	<entry key="redPath">false</entry>
 	<entry key="appID">false</entry>
-	<entry key="numberOfDrivers">oneDriver</entry>
-	<entry key="carNumber">5900679</entry>
-
 	<entry key="environment">stage</entry>
-	<entry key="waitForElement">20</entry>
+	<!-- <entry key="carNumber">2432773</entry> -->
+	<entry key="carNumber">1411852</entry>
+	<entry key="waitForElement">30</entry>
 	<entry key="waitBeforeClick">1</entry>
 	<entry key="MILLISECONDS">1000</entry>
-	<!-- scenario details: -->
-	
-	<!-- Insured details: -->
-	<entry key="insuredName">סביבת סטייג'</entry>
-	<entry key="insuredLastName">עמיחי בדיקה</entry>
-	<entry key="insuredIdDriver">00018</entry>
-	<entry key="insuredBirthDate">1988</entry>
+
+	<!-- Define scenario variables - FIRST offer questions: -->
+	<entry key="startInsuranceDate">0111 - This value is in sanity class!</entry>
+	<entry key="numberOfDrivers">3</entry>
+	<entry key="youngestDriverAge">31</entry>
+	<entry key="drivingYears">10</entry>
+	<entry key="mortgageCar">true</entry>
+	<entry key="yearsOfInsurance">true</entry>
+	<entry key="claimsIn3Years">true</entry>
+	<entry key="howManyClaims">1</entry>
+	<entry key="restrictions">false</entry>
+	<!-- Define scenario variables - contact wizard : -->
+	<entry key="wizardPhone0">0507202829</entry>
+	<entry key="wizardPhone1">0507202830</entry>
+
+	<!-- Define scenario variables - FINAL offer questions: -->
+	<!-- Policy owner details: -->
+	<entry key="insuredName">סביבת דב</entry>
+	<entry key="insuredLastName">בדיקה</entry>
+	<entry key="insuredIdDriver">330653783</entry>
+	<entry key="genderPolicyOwner">male</entry>
+	<entry key="insuredBirthDate">26091988</entry>
 	<entry key="insuredLicenseIssueYear">2006</entry>
 	<entry key="city">אלקנה</entry>
 	<entry key="street">שיר השירים</entry>
 	<entry key="houseNumber">200</entry>
 	<entry key="email">amihi100@gmail.com</entry>
 	<entry key="cellphone">0507202828</entry>
-	<!-- Contact wizard -->
-	<entry key="wizardPhone0">0507202829</entry>
-	<entry key="wizardPhone1">0507202830</entry>
-	<!-- Driver1 details: -->
-	<entry key="driver1Name">ישראל ישראלי</entry>
-	<entry key="driver1LastName">אזרח מספר 1</entry>
-	<entry key="driver1Id">330653783</entry>
-	<entry key="driver1BirthDate">1996</entry>
-	<entry key="driver1LicenseIssueYear">2014</entry>
+
+	<!-- Additional driver1 details: -->
+	<entry key="driver1Name">נהג נוסף1</entry>
+	<entry key="driver1LastName">משפחה1</entry>
+	<entry key="driver1Id">301818084</entry>
+	<entry key="driver1BirthDate">26091976</entry>
+	<entry key="driver1LicenseIssueYear">2005</entry>
+
+	<!-- Additional driver2 details: -->
+	<entry key="driver2Name">נהג נוסף2</entry>
+	<entry key="driver2LastName">משפחה2</entry>
+	<entry key="driver2Id">301737870</entry>
+	<entry key="driver2BirthDate">26091977</entry>
+	<entry key="driver2LicenseIssueYear">2004</entry>
+
 	<!-- CreditGaurd details -->
 	<entry key="cardFullName">עמיחי תורגמן</entry>
 	<entry key="cardPersonalId">890108558</entry>
 	<entry key="cardNumber">5326120384572410</entry>
 	<entry key="cardMonth">9</entry>
 	<entry key="cardYear">2020</entry>
+	<!-- EXTRA DETALIS -->
 </properties>

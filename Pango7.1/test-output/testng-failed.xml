@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test-class Suite]" parallel="tests">
-  <parameter name="xml" value="dev"/>
+  <parameter name="xml" value="stage"/>
   <test thread-count="2" name="Automated test - End2End(failed)" parallel="tests">
     <classes>
       <class name="TestNG.sanityAllOptionsTest">

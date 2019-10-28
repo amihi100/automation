@@ -2,48 +2,48 @@
 <testng-results skipped="0" failed="3" ignored="1" total="13" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Test-class Suite" duration-ms="284926" started-at="2019-10-06T08:59:10Z" finished-at="2019-10-06T09:03:55Z">
+  <suite name="Test-class Suite" duration-ms="277640" started-at="2019-10-28T14:39:07Z" finished-at="2019-10-28T14:43:45Z">
     <groups>
     </groups>
-    <test name="Automated test - End2End" duration-ms="284926" started-at="2019-10-06T08:59:10Z" finished-at="2019-10-06T09:03:55Z">
+    <test name="Automated test - End2End" duration-ms="277640" started-at="2019-10-28T14:39:07Z" finished-at="2019-10-28T14:43:45Z">
       <class name="TestNG.sanityAllOptionsTest">
-        <test-method status="PASS" signature="initialOfferQuestions()[pri:12, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferQuestions" duration-ms="20427" started-at="2019-10-06T08:59:10Z" finished-at="2019-10-06T08:59:31Z">
+        <test-method status="PASS" signature="initialOfferQuestions()[pri:12, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferQuestions" duration-ms="17676" started-at="2019-10-28T14:39:07Z" finished-at="2019-10-28T14:39:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferQuestions -->
-        <test-method status="PASS" signature="callMeWizard1()[pri:20, instance:TestNG.sanityAllOptionsTest@d737b89]" name="callMeWizard1" duration-ms="13004" started-at="2019-10-06T08:59:31Z" finished-at="2019-10-06T08:59:44Z">
+        <test-method status="PASS" signature="callMeWizard1()[pri:20, instance:TestNG.sanityAllOptionsTest@d737b89]" name="callMeWizard1" duration-ms="12997" started-at="2019-10-28T14:39:25Z" finished-at="2019-10-28T14:39:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- callMeWizard1 -->
-        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferScreen" duration-ms="20449" started-at="2019-10-06T08:59:44Z" finished-at="2019-10-06T09:00:04Z">
+        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@d737b89]" name="initialOfferScreen" duration-ms="20351" started-at="2019-10-28T14:39:38Z" finished-at="2019-10-28T14:39:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferScreen -->
-        <test-method status="PASS" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferQuestions" duration-ms="46375" started-at="2019-10-06T09:00:04Z" finished-at="2019-10-06T09:00:50Z">
+        <test-method status="PASS" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferQuestions" duration-ms="42665" started-at="2019-10-28T14:39:58Z" finished-at="2019-10-28T14:40:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferQuestions -->
-        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferScreen" duration-ms="18718" started-at="2019-10-06T09:00:50Z" finished-at="2019-10-06T09:01:09Z">
+        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@d737b89]" name="finalOfferScreen" duration-ms="18583" started-at="2019-10-28T14:40:41Z" finished-at="2019-10-28T14:40:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@d737b89]" name="covers" duration-ms="2538" started-at="2019-10-06T09:01:09Z" finished-at="2019-10-06T09:01:12Z">
+        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@d737b89]" name="covers" duration-ms="2532" started-at="2019-10-28T14:40:59Z" finished-at="2019-10-28T14:41:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@d737b89]" name="payments" duration-ms="17456" started-at="2019-10-06T09:01:12Z" finished-at="2019-10-06T09:01:29Z">
+        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@d737b89]" name="payments" duration-ms="17381" started-at="2019-10-28T14:41:02Z" finished-at="2019-10-28T14:41:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@d737b89]" name="returnSteps" duration-ms="35779" started-at="2019-10-06T09:01:29Z" finished-at="2019-10-06T09:02:05Z">
+        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@d737b89]" name="returnSteps" duration-ms="35615" started-at="2019-10-28T14:41:19Z" finished-at="2019-10-28T14:41:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnSteps -->
-        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@d737b89]" name="forwardSteps" duration-ms="59618" started-at="2019-10-06T09:02:05Z" finished-at="2019-10-06T09:03:05Z">
+        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@d737b89]" name="forwardSteps" duration-ms="59520" started-at="2019-10-28T14:41:55Z" finished-at="2019-10-28T14:42:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forwardSteps -->
-        <test-method status="FAIL" signature="iframeCreditGuard()[pri:90, instance:TestNG.sanityAllOptionsTest@d737b89]" name="iframeCreditGuard" duration-ms="11160" started-at="2019-10-06T09:03:05Z" finished-at="2019-10-06T09:03:16Z">
+        <test-method status="FAIL" signature="iframeCreditGuard()[pri:90, instance:TestNG.sanityAllOptionsTest@d737b89]" name="iframeCreditGuard" duration-ms="11192" started-at="2019-10-28T14:42:54Z" finished-at="2019-10-28T14:43:06Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in Iframe CreditGuard]]>
@@ -77,7 +77,7 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iframeCreditGuard -->
-        <test-method status="FAIL" signature="thankYouPage()[pri:100, instance:TestNG.sanityAllOptionsTest@d737b89]" name="thankYouPage" duration-ms="35345" started-at="2019-10-06T09:03:16Z" finished-at="2019-10-06T09:03:51Z">
+        <test-method status="FAIL" signature="thankYouPage()[pri:100, instance:TestNG.sanityAllOptionsTest@d737b89]" name="thankYouPage" duration-ms="35056" started-at="2019-10-28T14:43:06Z" finished-at="2019-10-28T14:43:41Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed to display thank you page]]>
@@ -111,7 +111,7 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thankYouPage -->
-        <test-method status="FAIL" signature="registeredAccount()[pri:110, instance:TestNG.sanityAllOptionsTest@d737b89]" name="registeredAccount" duration-ms="4020" started-at="2019-10-06T09:03:51Z" finished-at="2019-10-06T09:03:55Z">
+        <test-method status="FAIL" signature="registeredAccount()[pri:110, instance:TestNG.sanityAllOptionsTest@d737b89]" name="registeredAccount" duration-ms="4033" started-at="2019-10-28T14:43:41Z" finished-at="2019-10-28T14:43:45Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed to display thank you page]]>
