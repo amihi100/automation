@@ -216,6 +216,10 @@ public class sanityAllOptionsTest {
 		try {
 
 			// Show accessibility-menu:
+			//Hide or show in console google dev tools:
+			// $('.accessibility-menu').show()
+			// $('.accessibility-menu').hide()
+			
 			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
 			js.executeScript("$('.accessibility-menu').show()");
 
