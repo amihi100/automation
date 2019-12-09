@@ -7,19 +7,30 @@ package TestNG;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
+import org.apache.tools.ant.taskdefs.Definer.Format;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,6 +38,7 @@ import org.testng.annotations.Test;
 import com.google.errorprone.annotations.Var;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Parameters;
 //import com.google.common.base.Stopwatch;
 
@@ -69,6 +81,84 @@ public class sanityAllOptionsTest {
 	String dateWithZero;
 	String numOfDrivers = "";
 
+	public void emailException() throws Exception {
+
+		try {
+			// FullScreen:
+//			Dimension windowDimension2;
+//			windowDimension2 = new Dimension(1080, 1920);
+
+			// Try ScreenShot:
+			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
+			// Now copy .jpeg to screenShotPath
+			scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile,
+					new File(VarClass.screenShotPath + "\\" + VarClass.environment + VarClass.filename + ".jpeg"));
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
+
+//			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
+//			// Now copy .jpeg to screenShotPath
+//			scrFile=((TakesScreenshot)VarClass.driver).getScreenshotAs(OutputType.FILE);
+//			FileUtils.copyFile(scrFile,new File(VarClass.screenShotPath+"\\"+VarClass.environment+VarClass.filename+".jpeg"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("Failed in ScreenShot");
+		}
+
+		try {
+
+			// Email:
+			VarClass.driver.get("https://iiii.co.il/#contact");
+			// Wait +7 seconds for iiii site.
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
+			VarClass.driver.findElementByXPath("//input[@placeholder='Your name']")
+					.sendKeys(VarClass.environment + " Error");
+			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
+			VarClass.driver.findElementByXPath("//input[@placeholder='Your e-mail']")
+					.sendKeys("amichaito@matrix.co.il");
+			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
+			VarClass.driver.findElementByXPath("//input[@placeholder='Subject']")
+					.sendKeys(VarClass.environment + " Error");
+			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
+
+			VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
+					.sendKeys(VarClass.driver.manage().logs().get("browser").toString() + "</br>");
+
+			// logs into arrayList.
+			LogEntries logEntries = VarClass.driver.manage().logs().get(LogType.BROWSER);
+
+			String logLine;
+			for (LogEntry entry : logEntries) {
+				logLine = new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage();
+				System.out.println(logLine);
+
+				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']").sendKeys(logLine + "</br>");
+
+				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
+						.sendKeys(VarClass.driver.manage().logs().get("browser").toString() + "</br>");
+				LogEntries logs = VarClass.driver.manage().logs().get("browser");
+
+			}
+
+			System.out.println(VarClass.driver.manage().logs().get("browser"));
+			VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
+					.sendKeys(VarClass.driver.manage().logs().get("browser") + "</br>");
+			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
+			VarClass.driver.findElementByXPath("//input[@class='wpcf7-form-control wpcf7-submit']").click();
+			// Wait +7 seconds for iiii site.
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("Failed in Email send by iiii.co.il");
+		}
+
+		// Close agent
+		VarClass.driver.quit();
+
+	}
+
 	public int monthDatePlus1(String dayOrMonth, int valueOfDayOrMonth) {
 
 		if (dayOrMonth == "month") {
@@ -97,6 +187,7 @@ public class sanityAllOptionsTest {
 
 	// Screen 1.2
 	public String numberOfDrivers(String numOfDrivers) {
+
 		numOfDrivers = VarClass.numberOfDrivers;
 		switch (numOfDrivers) {
 		case "1":
@@ -210,27 +301,40 @@ public class sanityAllOptionsTest {
 	}
 
 //	@Test(priority = 1 , dependsOnGroups={"varClass.defineVariables"})
-	@Test(priority = 12)
+	@Test(priority = 10)
 
 	public void initialOfferQuestions() throws Exception {
 		try {
 
 			// Show accessibility-menu:
-			//Hide or show in console google dev tools:
+			// Hide or show in console google dev tools:
 			// $('.accessibility-menu').show()
 			// $('.accessibility-menu').hide()
-			
+
 			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
 			js.executeScript("$('.accessibility-menu').show()");
 
 			Instant start = Instant.now();
+
+			System.out.println("222222");
+//			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()},000)");
+//			
+//			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()},000)");
+//			
+
+//			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("--start-maximized");
+
+			// VarClass.driver.manage().window().maximize();
+
+			// VarClass.driver.manage().window().fullscreen();
+
+			System.out.println("33333333");
+
 			// Screen1.1: Start insurance date.
 			VarClass.wait = new WebDriverWait(VarClass.driver, VarClass.waitForElement);
 			// VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-2")));
-			// ScreenShot:
-			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
-			// Now copy .jpeg to screenShotPath
-			FileUtils.copyFile(scrFile, new File(VarClass.screenShotPath + VarClass.filename + ".jpeg"));
+
 //			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 //			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").clear();
 //			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
@@ -252,10 +356,11 @@ public class sanityAllOptionsTest {
 			// Screen1.3: Youngest driver.
 			VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("youngest-driver-age")));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-			VarClass.driver.findElementById("youngest-driver-age").click();
+			VarClass.driver.findElementById("label-for-youngest-driver-age").click();
 			VarClass.driver.findElementById("youngest-driver-age").sendKeys(VarClass.youngestDriverAge);
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//*[contains(@class,'orange')]").click();
+
 			// Screen1.4: licenseOfYoungestDriver.;
 			VarClass.wait
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(driverYears(VarClass.drivingYears))));
@@ -292,6 +397,7 @@ public class sanityAllOptionsTest {
 			System.out.println("Method initialOfferQuestions took: " + Duration.between(start, end));
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in FIRST OFFER QUESTIONS.");
 		}
 	}
@@ -339,6 +445,8 @@ public class sanityAllOptionsTest {
 					.click();
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("22222");
+			emailException();
 			throw new Exception("Failed in ***Call me wizard 1***");
 		}
 	}
@@ -346,7 +454,6 @@ public class sanityAllOptionsTest {
 	@Test(priority = 30)
 	public void initialOfferScreen() throws Exception {
 		try {
-
 			TimeUnit.SECONDS.sleep(2);
 			WebDriverWait wait1 = new WebDriverWait(VarClass.driver, this.VarClass.waitForElement);
 			wait1.until(ExpectedConditions.visibilityOfElementLocated(
@@ -427,6 +534,7 @@ public class sanityAllOptionsTest {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in INITIAL OFFER SCREEN QUESTION");
 		}
 	}
@@ -625,10 +733,12 @@ public class sanityAllOptionsTest {
 					.click();
 			// Value for red path Scenario:
 			try {
-				
-				if(Integer.parseInt(VarClass.numberOfDrivers) == 1 || Integer.parseInt(VarClass.numberOfDrivers) == 2){
+
+				if (Integer.parseInt(VarClass.numberOfDrivers) == 1
+						|| Integer.parseInt(VarClass.numberOfDrivers) == 2) {
 					TimeUnit.SECONDS.sleep(1);
-					VarClass.driver.findElementByXPath(criminalAndRefuse(Integer.parseInt(VarClass.numberOfDrivers))).click();
+					VarClass.driver.findElementByXPath(criminalAndRefuse(Integer.parseInt(VarClass.numberOfDrivers)))
+							.click();
 					System.out.println("Red path of final offer!");
 				}
 			} catch (Exception e) {
@@ -672,10 +782,11 @@ public class sanityAllOptionsTest {
 					.click();
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in FINAL OFFER QUESTIONS");
 		}
 	}
-	
+
 	@Test(priority = 50)
 	public void finalOfferScreen() throws Exception {
 		try {
@@ -733,6 +844,7 @@ public class sanityAllOptionsTest {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in FINAL OFFER screen");
 		}
 	}
@@ -770,6 +882,7 @@ public class sanityAllOptionsTest {
 			VarClass.driver.findElementByXPath("/html/body/app-root/final-bid/div/div[1]/a[2]").click();
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in call me wizard #2");
 		}
 	}
@@ -778,44 +891,39 @@ public class sanityAllOptionsTest {
 	public void covers() throws Exception {
 		try {
 			// Screen: Covers.
-			this.VarClass.wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//span[contains(text(),'ביטול השתתפות עצמי')]")));
+			this.VarClass.wait.until(
+					ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'פגושים')]")));
 
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-			VarClass.driver.findElementByXPath(
-					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/horizontal-checkboxes/ul/li[1]/label")
-					.click();
+//			VarClass.driver.findElementByXPath(
+//					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/horizontal-checkboxes/ul/li[1]/label")
+//					.click();
 
-			VarClass.driver.findElementByXPath(
-					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/horizontal-checkboxes/ul/li[2]/label")
-					.click();
-			;
-			VarClass.driver.findElementByXPath(
-					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/horizontal-checkboxes/ul/li[3]/label")
-					.click();
-			VarClass.driver.findElementByXPath(
-					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/horizontal-checkboxes/ul/li[4]/label")
-					.click();
+			VarClass.driver.findElementById("chk-step1-q0-idx0").click();
+
+			VarClass.driver.findElementById("chk-step1-q0-idx1").click();
+
+			VarClass.driver.findElementById("chk-step1-q0-idx2").click();
+
 			System.out.println("כיסויים כוללים:");
 			System.out.println("-------------------------");
 			System.out.println(VarClass.driver
-					.findElementByXPath("//horizontal-checkboxes[@class='horizontal-checkboxes']//li[1]//label[1]")
-					.getText());
+					.findElementByXPath("//div[@class='flex-container']//div[1]//div[2]//div[1]//span[1]").getText());
 			System.out.println("-------------------------");
 			System.out.println(VarClass.driver
-					.findElementByXPath(" //horizontal-checkboxes[@class='horizontal-checkboxes']//li[2]//label[1]")
+					.findElementByXPath(" //div[@class='wizard-step-wrapper']//div[2]//div[2]//div[1]//span[1]")
 					.getText());
 			System.out.println("-------------------------");
-			System.out.println(VarClass.driver.findElementByXPath("//app-root//li[3]//label[1]").getText());
+			System.out.println(VarClass.driver.findElementByXPath("//div[3]//div[2]//div[1]//span[1]").getText());
 			System.out.println("-------------------------");
-			System.out.println(VarClass.driver.findElementByXPath("//app-root//li[4]//label[1]").getText());
-			System.out.println("-------------------------");
+
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath(
 					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/div/button[1]")
 					.click();
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in COVERS screen");
 		}
 	}
@@ -866,6 +974,7 @@ public class sanityAllOptionsTest {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in PAYMENTS screen");
 		}
 	}
@@ -991,6 +1100,7 @@ public class sanityAllOptionsTest {
 			(new Actions(VarClass.driver)).dragAndDrop(element, target).perform();
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in moveing BACKWARD");
 		}
 	}
@@ -1090,6 +1200,7 @@ public class sanityAllOptionsTest {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			emailException();
 			throw new Exception("Failed in moveing FORWARD");
 		}
 	}
@@ -1176,14 +1287,13 @@ public class sanityAllOptionsTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception("Failed to display thank you page");
-		}
-		finally{
-			//This block is executed either exception happened or not.
-			//TODO: close chrome tabs , delete cookies, preapre for new tests.
+		} finally {
+			// This block is executed either exception happened or not.
+			// TODO: close chrome tabs , delete cookies, preapre for new tests.
 			VarClass.driver.manage().deleteAllCookies();
-		//	VarClass.driver.close();
+			// VarClass.driver.close();
 			System.out.println("Closed tab and deleted cookies");
 		}
 	}
-	
+
 }

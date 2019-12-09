@@ -28,7 +28,7 @@
 
 	<!-- Define scenario variables - FINAL offer questions: -->
 	<!-- Policy owner details: -->
-	<entry key="insuredName">סביבת דב</entry>
+	<entry key="insuredName">סביבת פרוד</entry>
 	<entry key="insuredLastName">בדיקה</entry>
 	<entry key="insuredIdDriver">330653783</entry>
 	<entry key="genderPolicyOwner">male</entry>

@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test-class Suite" parallel="tests" thread-count="2">
-	<parameter name="xml" value="dev" />
-	<test name="Automated test - End2End">
-		<classes>
-			<!-- <class name="TestNG.varClass" /> -->
-			<class name="TestNG.sanityAllOptionsTest">
-				<methods>
-					<!-- <exclude name="callMeWizard1"/> -->
-				</methods>
-			</class>
-		</classes>
-	</test>
-</suite>
 
 
-	<!--
-<suite name="Pango App Suite" parallel="false"
-	preserve-order="true">
-	<test name="Regression Dev - End2End">
+	<test name="Test-class test 1 red0years">
+		<parameter name="xml" value="app" />
 		<classes>
-			<class name="TestNG.varClass" />
-			<class name="TestNG.DevSanityAllOptions" />
+			<class name="TestNG.sanityAllOptionsTest" />
 		</classes>
 	</test>
+	<test name="Test-class test 2 red1years">
+		<parameter name="xml" value="dev" />
+		<classes>
+			<class name="TestNG.sanityAllOptionsTest" />
+		</classes>
+	</test>
+
+    
 </suite>
--->
-<!-- <suite thread-count="1" verbose="1" name="Pango App Suite" annotations="JDK" 
-	parallel="classes"> <test name="Dev - End2End"> <classes> <class name="TestNG.varClass" 
-	/> <class name="TestNG.DevSanityAllOptions" /> </classes> </test> </suite> -->

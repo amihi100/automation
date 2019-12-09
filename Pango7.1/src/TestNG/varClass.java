@@ -9,9 +9,14 @@ import java.util.Collections;
 import java.util.Properties;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Optional;
@@ -195,13 +200,12 @@ public class varClass {
 
 			// C:\Users\amichaito\Desktop\chromedriver_win32\chromedriver.exe
 
-			
 			//TODO change this path if running with another machine.
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\amichaito\\Desktop\\chromedriver2\\chromedriver.exe");
 
 			// Define path to save screenShot of first screen (start date).
-			screenShotPath = "c:\\tmp1\\";
+			screenShotPath = "C:\\Users\\amichaito\\Desktop";
 
 			// Map<String, String> mobileEmulation = new HashMap<>();
 			// mobileEmulation.put("deviceName", "iPhone X");
@@ -210,11 +214,21 @@ public class varClass {
 
 			// options.addArguments("--window-size=320,900");
 
+			
+
 			options = new ChromeOptions();
+			
+			//Save agent console logs
+	        LoggingPreferences logPrefs = new LoggingPreferences();
+	        logPrefs.enable(LogType.BROWSER, Level.ALL);
+	        options.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
+	        
+	        
 			options.addArguments("disable-infobars");
 			options.setExperimentalOption("useAutomationExtension", false);
 			options.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));    
 			options.addArguments("--incognito");
+			//options.addArguments("--auto-open-devtools-for-tabs");
 			driver = new ChromeDriver(options);
 
 			driver.get(environmentURL);

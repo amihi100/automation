@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test-class Suite]" parallel="tests">
-  <parameter name="xml" value="dev"/>
-  <test thread-count="2" name="Automated test - End2End(failed)" parallel="tests">
+  <test thread-count="2" name="Test-class test 2 red1years(failed)" parallel="tests">
+    <parameter name="xml" value="dev"/>
     <classes>
       <class name="TestNG.sanityAllOptionsTest">
         <methods>
@@ -12,5 +12,17 @@
         </methods>
       </class> <!-- TestNG.sanityAllOptionsTest -->
     </classes>
-  </test> <!-- Automated test - End2End(failed) -->
+  </test> <!-- Test-class test 2 red1years(failed) -->
+  <test thread-count="2" name="Test-class test 1 red0years(failed)" parallel="tests">
+    <parameter name="xml" value="app"/>
+    <classes>
+      <class name="TestNG.sanityAllOptionsTest">
+        <methods>
+          <include name="thankYouPage"/>
+          <include name="registeredAccount"/>
+          <include name="iframeCreditGuard"/>
+        </methods>
+      </class> <!-- TestNG.sanityAllOptionsTest -->
+    </classes>
+  </test> <!-- Test-class test 1 red0years(failed) -->
 </suite> <!-- Failed suite [Test-class Suite] -->
